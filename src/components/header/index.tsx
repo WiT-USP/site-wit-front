@@ -4,7 +4,7 @@ import { Container } from "./style";
 
 export default function Header() {
     return (
-        <Container className="box">
+        <Container>
             <h1>W<span>i</span>T</h1>
             
             <div className = "menu">
