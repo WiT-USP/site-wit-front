@@ -40,6 +40,6 @@ export default createGlobalStyle`
       }      
 
     body {
-        background-color: var(--cor-branco);
+        background-color: var(--cor-roxo-claro);
     }
 `;
