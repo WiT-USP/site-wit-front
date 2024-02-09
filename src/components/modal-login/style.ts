@@ -60,6 +60,10 @@ export const Container = styled.div`
         hover: #ff0000;        
     }
 
+    .modal-btn:hover{
+        background: var(--cor-roxo-claro);
+    }
+
     .modal-p {
         text-align: left;
         font-weight: 800;

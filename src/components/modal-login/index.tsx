@@ -16,13 +16,6 @@ export default function ModalLogin() {
         setSenha(event.target.value);
     };
 
-    const handleMouseEnter = (event:any) => {
-        event.target.style.background = "var(--cor-roxo-claro)"
-    };
-      const handleMouseLeave = (event:any) => {
-        event.target.style.background = "var(--cor-roxo-escuro)"
-    };
-
     return (
         <Container>
             <div className ="modal">
@@ -34,14 +27,7 @@ export default function ModalLogin() {
                         <h2 className="modal-text">Senha</h2>
                         <input className="modal-input" type="text" value={senha} onChange={handleChangeSenha} placeholder="Entre com sua senha senha"/>
                     </div>
-                    <button 
-                    className="modal-btn"
-                    type="submit"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                    >
-                        Log In
-                    </button>
+                    <button className="modal-btn" type="submit" >Log In </button>
                 </form>
                 <p className="modal-p">WOMEN IN TECH - ICMC/USP 2024</p>
             </div>
