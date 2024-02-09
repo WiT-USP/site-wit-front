@@ -57,6 +57,11 @@ export const Container = styled.div`
         font-weight: 800;
         font-size: 1.5em;
         margin: 1.5em;
+        hover: #ff0000;        
+    }
+
+    .modal-btn:hover{
+        background: var(--cor-roxo-claro);
     }
 
     .modal-p {

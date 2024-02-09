@@ -17,6 +17,11 @@ export const Container = styled.header`
         span {
           font-size: 30px;
         }
+
+    }
+    
+    a:hover{
+        color: var(--cor-roxo-claro);
     }
 
     li {
