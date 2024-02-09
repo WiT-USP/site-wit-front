@@ -1,25 +1,15 @@
 import { styled } from "styled-components";
 
-export const Container = styled.div`
+export const Custom = styled.div`
     background: var(--cor-branco);
     display: flex;
-    height: 70vh;
-    width: 40vw;
     border-radius: 40px;
     color: var(--cor-roxo-escuro);
-    align-items: center;
-    justify-content: center;
 
     h1 {
         font-weight: 500;
         font-size: 3em;
         margin: 0.5em;
-    }
-
-    .modal-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     #itens {
@@ -69,4 +59,11 @@ export const Container = styled.div`
         left: 0;
         margin: 0 0 9.5em 2.5em;
     }
+
+    .jumbotron {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+        background-color: #e9ecef;
+        border-radius: .3rem;
+      }
 `;
