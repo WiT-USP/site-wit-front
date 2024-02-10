@@ -25,7 +25,7 @@ export default function ModalLogin() {
                         <h2 className="modal-text">E-mail</h2>
                         <input className="modal-input" type="text" value={email} onChange={handleChangeEmail} placeholder="Entre com seu e-mail"/>
                         <h2 className="modal-text">Senha</h2>
-                        <input className="modal-input" type="text" value={senha} onChange={handleChangeSenha} placeholder="Entre com sua senha senha"/>
+                        <input className="modal-input" type="text" value={senha} onChange={handleChangeSenha} placeholder="Entre com sua senha"/>
                     </div>
                     <button className="modal-btn" type="submit" >Log In </button>
                 </form>

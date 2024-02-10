@@ -56,8 +56,7 @@ export const Container = styled.div`
         border-radius: 60px;
         font-weight: 800;
         font-size: 1.5em;
-        margin: 1.5em;
-        hover: #ff0000;        
+        margin: 1.5em;       
     }
 
     .modal-btn:hover{
