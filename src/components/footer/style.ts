@@ -7,8 +7,6 @@ export const Container = styled.footer`
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
-    bottom: 0;
 
     h2 {
         color: var(--cor-branco);
