@@ -1,8 +1,8 @@
 import React from "react";
-import GlobalStyles from "../../styles/GlobalStyles";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
-import CardEvent from "../../components/card-event"
+import GlobalStyles from "../../../styles/GlobalStyles";
+import Header from "../../../components/user-components/header";
+import Footer from "../../../components/user-components/footer";
+import CardEvent from "../../../components/user-components/card-event"
 
 import {Container, HeaderContainer, FooterContainer} from "./style"
 

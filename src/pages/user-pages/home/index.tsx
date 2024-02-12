@@ -1,9 +1,9 @@
 import React from "react";
-import GlobalStyles from "../../styles/GlobalStyles";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
+import GlobalStyles from "../../../styles/GlobalStyles";
+import Header from "../../../components/user-components/header";
+import Footer from "../../../components/user-components/footer";
 
-import BannerImage from "../../assets/img/banner-home.png";
+import BannerImage from "../../../assets/img/banner-home.png";
 
 import {Container, HeaderContainer, FooterContainer} from "./style"
 

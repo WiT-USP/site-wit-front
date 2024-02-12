@@ -2,7 +2,7 @@ import React,{ useState } from "react";
 
 import { Container } from "./style";
 
-import CardImage from "../../assets/img/card_image.png";
+import CardImage from "../../../assets/img/card_image.png";
 
 export default function InfoEvent() {
     const [name, setName] = useState('');

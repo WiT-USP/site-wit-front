@@ -2,7 +2,6 @@ import { styled } from "styled-components";
 
 export const Container = styled.div` 
     background: var(--degrade-roxo-rosa);
-
     .card-event {
         display: flex;
         align-items: center;
