@@ -21,6 +21,7 @@ export const HeaderContainer = styled.header`
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1; 
 `;
 
 export const FooterContainer = styled.footer`
