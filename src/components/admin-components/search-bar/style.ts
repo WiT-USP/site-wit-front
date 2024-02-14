@@ -34,6 +34,9 @@ export const Container = styled.div`
         flex-wrap: wrap;
         gap: 6vw; 
         margin: 5vh 5vw;
+        padding-bottom: 0.9vh;
+        overflow: auto;
+        max-height: 80vh;
     }
 `;
 

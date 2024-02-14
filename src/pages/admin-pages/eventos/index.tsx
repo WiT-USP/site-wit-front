@@ -4,23 +4,20 @@ import Header from "../../../components/admin-components/header"
 import Card from "../../../components/admin-components/card"
 import Filter from "../../../components/admin-components/search-bar";
 
+import iconDelete from "../../../assets/img/btn-delete.png"
+
 import {Container} from "./style"
+import DynamicButton from "../../../components/admin-components/btn";
+import CardsSet from "../../../components/admin-components/cards-set";
 
 export default function EventosAdmin() {
     return (
         <Container>
             <GlobalStyles/>
             <Header/>
+            {/* <DynamicButton text="Deletar" img_path={iconDelete}/> */}
             <Filter/>
-            <div className="eventos">
-                {/* <Card name="Evento X" 
-                        cardNumber={1} 
-                        startTime="Inicio: xxhxxmin, xx/xx/xxxx" 
-                        endTime="Inicio: xxhxxmin, xx/xx/xxxx" 
-                        event="Evento X" 
-                        workload=""
-                /> */}
-            </div>
+            <CardsSet/>
         </Container>
     )
 }

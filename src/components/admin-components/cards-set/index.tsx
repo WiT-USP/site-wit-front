@@ -3,10 +3,7 @@ import React from "react";
 import { Container } from "./style";
 import Card from "../card";
 
-import btnSearch from "../../../assets/img/btn-filter.png"
-import CardsSet from "../cards-set";
-
-const SearchBar: React.FC = () => {
+const CardsSet: React.FC = () => {
 
     const lista = [
         {
@@ -53,21 +50,27 @@ const SearchBar: React.FC = () => {
 
 
     const [listEvents, setListEvents] = React.useState(lista);
-    const [text, setText] = React.useState('');
-    const handleOnClick = () => {
-        const findEvent = listEvents.length>0 && listEvents.filter(n => n.eventName === text);
-    }
 
     return (
         <Container>
-            <div className="search-bar">
-                <input className="input-search" type="text" placeholder="Pesquisar evento" value={text} onChange = {(e) => setText(e.target?.value)}/>
-                <button className="search-btn" disabled={!text} onClick={handleOnClick}>
-                    <img src={btnSearch} alt="botão de busca de eventos"/>
-                </button>
+            <div className="card-list">
+                {listEvents.length>0 && listEvents.map(lista => {
+                    return(
+                        <Card
+                            key={lista.cardNumber}
+                            cardNumber={lista.cardNumber}
+                            name={lista.eventName}
+                            startTime={lista.startTime}
+                            endTime={lista.endTime}
+                            event={lista.event}
+                            workload={lista.workload}
+                        />
+                    )
+                })}
             </div>
         </Container>
+
     )
 }
 
-export default SearchBar;
+export default CardsSet;
