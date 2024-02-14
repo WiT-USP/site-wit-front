@@ -9,7 +9,8 @@ export default createGlobalStyle`
         --amarelo: #F3E838;
         --cor-branco: #F2F2F2;
         --cor-preto: #0D0D0D;
-        --degrade-roxo-rosa: linear-gradient(103.5deg, var(--cor-roxo-escuro) 8%, var(--cor-rosa) 390%);
+        --degrade-roxo-rosa: linear-gradient(103.5deg, var(--cor-roxo-escuro) 8%, var(--cor-rosa) 350%);
+        --degrade-branco-cinza: linear-gradient(90deg, #D7D7D9 0%, var(--cor-branco) 75%);
         --font-family: 'Nunito', sans-serif;
         --font-logo: 'Inter', sans-serif;
     }
