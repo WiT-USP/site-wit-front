@@ -6,7 +6,9 @@ import About from './pages/user-pages/about';
 import Home from './pages/user-pages/home';
 import Events from './pages/user-pages/events';
 import EventsInfo from './pages/user-pages/event-info';
-import EventsAdmin from './pages/admin-pages/eventos'
+import EventsAdmin from './pages/admin-pages/eventos';
+import ActivitiesAdmin from "./pages/admin-pages/atividades";
+import CertificatesAdmin from "./pages/admin-pages/certificados";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/eventos" element={<Events/>} />
           <Route path="/eventos-info" element={<EventsInfo/>} />
           <Route path="/eventos-admin" element={<EventsAdmin/>} />
+          <Route path="/atividades-admin" element={<ActivitiesAdmin/>} />
+          <Route path="/certificados-admin" element={<CertificatesAdmin/>} />
         </Routes>
       </div>
     </Router>

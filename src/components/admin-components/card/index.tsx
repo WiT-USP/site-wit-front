@@ -33,18 +33,18 @@ const Card: React.FC<CardProps> = ({ cardNumber, name, startTime, endTime, event
                 {workload && <p className="text-different"><span>Carga Horária: </span>{workload}</p>}
                 {isEventsPage && (
                     <>
-                        <DynamicTag isTrue={true} text="Cover"/>
-                        <DynamicTag isTrue={true} text="Coffee"/>
+                        <DynamicTag isTrue={true} text="Cover" link="#"/>
+                        <DynamicTag isTrue={true} text="Coffee" link="#"/>
                     </>
                 )}
                 {isActivitiesPage && (
                     <>
-                        <DynamicTag isTrue={true} text="Certificado"/>
+                        <DynamicTag isTrue={true} text="Certificado" link="#"/>
                     </>
                 )}
                 {isCertificatesPage && (
                     <>
-                        <DynamicTag isTrue={true} text="Template"/>
+                        <DynamicTag isTrue={true} text="Template" link="#"/>
                     </>
                 )}
             </div>

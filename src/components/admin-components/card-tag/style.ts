@@ -9,9 +9,9 @@ export const Container = styled.div`
         padding: 0.5px;
         border-radius: 20px;
         text-align: center;
-        width: 4em;
+        width: auto;
+        padding: 0.2em;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         margin: 0.5em 1em 0.5em 0;
     }
-
 `;

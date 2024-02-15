@@ -1,27 +1,22 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-
-    .search-bar {
-        display: flex;
-        justify-content: center;
-        margin: 2vw;
-    }
+    position: relative;
+    text-align: center;
+    margin-top: 3em;
 
     .input-search {
         height: 3em;
         border-radius: 20px;
         width: 40%;
-        outline: none;
         text-indent: 8.5em;
         fext-font: var(--font-family);
     }
 
     .search-btn {
-        z-index: 1; 
-        position: fixed;
-        top: 16.5vh;
-        left: 31vw;
+        position: absolute;
+        top: 0.5vh;
+        left: 30vw;
         background: transparent;
     }
 
