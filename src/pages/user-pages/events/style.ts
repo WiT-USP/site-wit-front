@@ -2,6 +2,14 @@ import { styled } from "styled-components";
 
 export const Container = styled.div` 
 
+    hr {
+        display: block;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width:50%;
+    }
+
     .events {
         text-align: center;
     }
@@ -15,6 +23,11 @@ export const Container = styled.div`
         flex-wrap: wrap;
     }
 
+    .jumbotron {
+        padding: 1rem 1rem;
+        background: #e3e3e3;
+    }
+
     .title {
         font-weight: 800px;
         color: var(--cor-roxo-escuro);
@@ -24,6 +37,7 @@ export const Container = styled.div`
 
     #title-past {
         margin-top: 0;
+        padding:0.5em;
     }
 `;
 

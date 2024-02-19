@@ -10,7 +10,9 @@ export default createGlobalStyle`
         --cor-branco: #F2F2F2;
         --cor-preto: #0D0D0D;
         --degrade-roxo-rosa: linear-gradient(103.5deg, var(--cor-roxo-escuro) 8%, var(--cor-rosa) 350%);
+        --degrade-roxo-rosa2: linear-gradient(145deg, var(--cor-roxo-escuro) 35%, var(--cor-rosa) 100%);
         --degrade-branco-cinza: linear-gradient(90deg, #D7D7D9 0%, var(--cor-branco) 75%);
+        --degrade-branco-rosa: linear-gradient(180deg, var(--cor-branco) 0%, var(--cor-rosa) 100%);
         --font-family: 'Nunito', sans-serif;
         --font-logo: 'Inter', sans-serif;
     }
@@ -42,5 +44,16 @@ export default createGlobalStyle`
 
     body {
         background-color: var(--cor-branco);
+    }
+
+    hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        height: 3px;
+        width:50%;
+        background-color: var(--cor-rosa);
     }
 `;
