@@ -7,7 +7,7 @@ export default function Header() {
         <Container>
             <a href="/"><h1>W<span>i</span>T</h1></a>
             <div className = "menu">
-                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="/about">SOBRE</a></li>
                 <li>|</li>
                 <li><a href="/eventos">EVENTOS</a></li>
                 <li>|</li>

@@ -19,7 +19,8 @@ export default function Events() {
                     <CardEvent/>
                 </div>
             </div>
-            <div className = 'events'>
+            <hr></hr>
+            <div className = 'events jumbotron'>
                 <h1 id='title-past' className ='title'>EVENTOS PASSADOS</h1>
                 <div className="cards">
                     <CardEvent/>
