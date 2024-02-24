@@ -12,6 +12,8 @@ import {Container} from "./style"
 import DynamicButton from "../../../components/admin-components/btn";
 import CardsSet from "../../../components/admin-components/cards-set";
 
+import data from "../../../data/fakedata.json";
+
 export default function EventosAdmin() {
     return (
         <Container>
@@ -30,7 +32,7 @@ export default function EventosAdmin() {
                     </div>
                 </div>
                 <div className="cards">
-                    <CardsSet/>
+                    <CardsSet cards={data}/>
                 </div>
             </section>
         </Container>

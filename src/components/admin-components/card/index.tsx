@@ -1,55 +1,39 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-
 import DynamicTag from "../card-tag";
-
+import CardProps from "../props/props-card";
 import { Container } from "./style";
 
-interface CardProps {
-    cardNumber: number;
-    name: string;
-    startTime: string;
-    endTime: string;
-    event: string;
-    workload: string;
-}
-
-const Card: React.FC<CardProps> = ({ cardNumber, name, startTime, endTime, event, workload}) => {
-    const location = useLocation();
-    const currentPage = location.pathname;
-
-    const isEventsPage = currentPage === "/eventos-admin";
-    const isActivitiesPage = currentPage === "/atividades-admin";
-    const isCertificatesPage = currentPage === "/certificados-admin";
-
+const Card: React.FC<CardProps & { isSelected: boolean; onClick: () => void }> = ({
+    cardNumber,
+    eventName,
+    startTime,
+    endTime,
+    event,
+    workload,
+    isSelected,
+    onClick
+}) => {
     return (
         <Container>
-            <div className = "menu">
+            <div
+                className="menu"
+                style={{
+                    boxShadow: isSelected ? "0px 0px 10px 3px var(--cor-roxo-claro)" : "0px 0px 10px 3px rgba(0, 0, 0, 0.3)"
+                }}
+                onClick={onClick}
+            >
                 <h1>#{cardNumber}</h1>
-                <h2>{name}</h2>
+                <h2>{eventName}</h2>
                 {startTime && <p><span>Inicio: </span>{startTime}</p>}
                 {endTime && <p><span>Fim: </span>{endTime}</p>}
                 {event && <p className="text-different"><span>Evento: </span>{event}</p>}
                 {workload && <p className="text-different"><span>Carga Horária: </span>{workload}</p>}
-                {isEventsPage && (
-                    <>
-                        <DynamicTag isTrue={true} text="Cover" link="#"/>
-                        <DynamicTag isTrue={true} text="Coffee" link="#"/>
-                    </>
-                )}
-                {isActivitiesPage && (
-                    <>
-                        <DynamicTag isTrue={true} text="Certificado" link="#"/>
-                    </>
-                )}
-                {isCertificatesPage && (
-                    <>
-                        <DynamicTag isTrue={true} text="Template" link="#"/>
-                    </>
-                )}
+                <div className="tags-area">
+                    {/* Renderização de tags dinâmicas */}
+                </div>
             </div>
         </Container>
-    )
-}
+    );
+};
 
 export default Card;

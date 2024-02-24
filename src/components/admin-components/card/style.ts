@@ -1,15 +1,16 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    height: auto;
-    width: 343px;
-    background: var(--cor-branco);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
 
     .menu {
         padding: 1em;
+        display: flex;
+        height: auto;
+        width: 343px;
+        background: var(--cor-branco);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        flex-direction: column;
     }
 
     h1 {
@@ -37,5 +38,19 @@ export const Container = styled.div`
             color: var(--cor-preto);
         }
     }
+
+    .tags-area {
+        flex-direction: row;
+    }
+
+    .menu:hover {
+        transform: scale(1.05);
+    }
+
+    .menu:checked {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.0);
+    }
+
+
 
 `;

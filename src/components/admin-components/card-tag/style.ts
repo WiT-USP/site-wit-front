@@ -10,7 +10,8 @@ export const Container = styled.div`
         border-radius: 20px;
         text-align: center;
         width: auto;
-        padding: 0.2em;
+        max-width: 6em;
+        padding: 0.2em 0.4em;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         margin: 0.5em 1em 0.5em 0;
     }

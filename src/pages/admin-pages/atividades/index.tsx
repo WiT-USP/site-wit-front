@@ -11,6 +11,9 @@ import iconAdd from "../../../assets/img/icon-add.png"
 import {Container} from "./style";
 import DynamicButton from "../../../components/admin-components/btn";
 import CardsSet from "../../../components/admin-components/cards-set";
+import CradProps from "../../../components/admin-components/props/props-card";
+
+import data from "../../../data/fakedata.json";
 
 export default function AtividadesAdmin() {
     return (
@@ -30,7 +33,7 @@ export default function AtividadesAdmin() {
                     </div>
                 </div>
                 <div className="cards">
-                    <CardsSet/>
+                    <CardsSet cards={data}/>
                 </div>
             </section>
         </Container>
