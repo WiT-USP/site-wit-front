@@ -9,6 +9,7 @@ import EventsInfo from './pages/user-pages/event-info';
 import EventsAdmin from './pages/admin-pages/eventos';
 import ActivitiesAdmin from "./pages/admin-pages/atividades";
 import CertificatesAdmin from "./pages/admin-pages/certificados";
+import Teste from "./pages/admin-pages/teste";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/eventos-admin" element={<EventsAdmin/>} />
           <Route path="/atividades-admin" element={<ActivitiesAdmin/>} />
           <Route path="/certificados-admin" element={<CertificatesAdmin/>} />
+          <Route path="/teste" element={<Teste/>} />
         </Routes>
       </div>
     </Router>
