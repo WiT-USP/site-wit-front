@@ -15,7 +15,7 @@ export default function Home() {
                 <Header/>
             </HeaderContainer>
             <img className ='banner-home' src={BannerImage} alt="Banner do Women in Tech"/>
-            <h1 className ='insta-title'>INSTAGRAM</h1>
+            <h1 className ='insta-title'>Em breve mais novidades... ❤</h1>
             <FooterContainer>
                 <Footer/>
             </FooterContainer>

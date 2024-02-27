@@ -42,7 +42,9 @@ const CertificadosAdmin: React.FC = () => {
                     <div className="buttons">
                         <DynamicButton text="Deletar" img_path={iconDelete}/>
                         <DynamicButton text="Editar" img_path={iconEdit}/>
-                        <DynamicButton text="Novo Evento" img_path={iconAdd}/>
+                        <a href="/criar-certificado">
+                            <DynamicButton text="Novo Certificado" img_path={iconAdd}/>
+                        </a>
                         <Button className="exclusive-button" onClick={handleButtonClick}>
                             <img className ='img-btn'src={iconIssue}></img>
                             Emitir

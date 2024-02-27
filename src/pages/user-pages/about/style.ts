@@ -11,7 +11,7 @@ a {
 
 h1 {
     font-type: var(--font-logo);
-    font-size: 2em;
+    font-size: 3em;
     color: var(--cor-roxo-escuro);
 }
 
@@ -77,6 +77,16 @@ hr {
     padding: 3rem;
 }
 
+.about-text {
+    margin-left: 8vw;
+    margin-right: 4vw;
+}
+
+p {
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
 .listing h1 {
     text-align: center;
 
@@ -84,6 +94,12 @@ hr {
 
 .bi {
     font-size: 50px;
+}
+
+img {
+    height: 60vh;
+    width: 30vw;
+    margin-right: 8vw;
 }
 
 

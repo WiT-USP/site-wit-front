@@ -1,4 +1,5 @@
 import React from "react";
+
 import GlobalStyles from "../../../styles/GlobalStyles";
 import Header from "../../../components/admin-components/header"
 import Card from "../../../components/admin-components/card"
@@ -28,7 +29,9 @@ export default function EventosAdmin() {
                     <div className="buttons">
                         <DynamicButton text="Deletar" img_path={iconDelete}/>
                         <DynamicButton text="Editar" img_path={iconEdit}/>
-                        <DynamicButton text="Novo Evento" img_path={iconAdd}/>
+                        <a href="/criar-eventos">
+                            <DynamicButton text="Novo Evento" img_path={iconAdd}/>
+                        </a>
                     </div>
                 </div>
                 <div className="cards">

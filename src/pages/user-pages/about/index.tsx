@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import BannerImage from "../../../assets/img/banner-home.png";
+import ImageAbout from "../../../assets/img/about_photo.png";
 
 
 import {Custom} from "./style"
@@ -22,13 +22,13 @@ export default function About() {
                 <Container fluid>
                     <Row >
                         <Col className="about">
-                            <div className="anchor">
+                            <div className="about-text">
                                 <h1>Sobre</h1>
                                 <p>O Women in Tech tem como objetivo realizar eventos, integração, reuniões e debates com a finalidade de discutir a falta de representatividade feminina nas áreas de ciência e tecnologia, de forma empoderada e nos conectando com outras mulheres, assim incentivamos mais mulheres a ingressarem e permanecerem na área.</p>    
                                
                             </div>
                             <div>
-                                <img width='700rem' src={BannerImage} alt="Banner do Women in Tech"/>
+                                <img width='700rem' src={ImageAbout} alt="Banner do Women in Tech"/>
                             </div>                            
                         </Col>    
                     </Row>

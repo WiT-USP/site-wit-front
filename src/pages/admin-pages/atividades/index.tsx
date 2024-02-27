@@ -29,7 +29,9 @@ export default function AtividadesAdmin() {
                     <div className="buttons">
                         <DynamicButton text="Deletar" img_path={iconDelete}/>
                         <DynamicButton text="Editar" img_path={iconEdit}/>
-                        <DynamicButton text="Nova Atividade" img_path={iconAdd}/>
+                        <a href="/criar-atividade">
+                            <DynamicButton text="Nova Atividade" img_path={iconAdd}/>
+                        </a>
                     </div>
                 </div>
                 <div className="cards">

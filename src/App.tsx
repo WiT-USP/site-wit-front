@@ -8,6 +8,9 @@ import EventsInfo from './pages/user-pages/event-info';
 import EventsAdmin from './pages/admin-pages/eventos';
 import ActivitiesAdmin from "./pages/admin-pages/atividades";
 import CertificatesAdmin from "./pages/admin-pages/certificados";
+import CreateEventsAdmin from "./pages/admin-pages/criar-eventos";
+import CreateActivitiesAdmin from "./pages/admin-pages/create-activities";
+import CreateCertificateAdmin from "./pages/admin-pages/create-certificate"
 function App() {
   return (
     <Router>
@@ -21,10 +24,12 @@ function App() {
           <Route path="/eventos-admin" element={<EventsAdmin/>} />
           <Route path="/atividades-admin" element={<ActivitiesAdmin/>} />
           <Route path="/certificados-admin" element={<CertificatesAdmin/>} />
+          <Route path="/criar-eventos" element={<CreateEventsAdmin/>} />
+          <Route path="/criar-atividade" element={<CreateActivitiesAdmin/>} />
+          <Route path="/criar-certificado" element={<CreateCertificateAdmin/>} />
         </Routes>
       </div>
     </Router>
-    
   );
 }
 export default App;
