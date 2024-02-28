@@ -14,30 +14,14 @@ export const Container = styled.div`
         text-align: center;
     }
 
-    .cards {
-        display: flex;
-        justify-content: center;
-        gap: 5vw;
-        margin: 5vw;
-        margin-top: 2vw;
-        flex-wrap: wrap;
+    .cards-area {
+        background: var(--cor-branco);
+        border-radius: 20px 20px 0 0;
+        margin: 5vh 5vw;
     }
 
-    .jumbotron {
-        padding: 1rem 1rem;
-        background: #e3e3e3;
-    }
-
-    .title {
-        font-weight: 800px;
-        color: var(--cor-roxo-escuro);
-        font-size: 3em;
-        margin-top: 3.5em;
-    }
-
-    #title-past {
-        margin-top: 0;
-        padding:0.5em;
+    .main-area {
+        margin-top: 150px;
     }
 `;
 

@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 
-export const Custom = styled.header`
+export const Custom = styled.div`
 background: var( --cor-branco);
+padding: 100px 0 0 0;
 
 a {
     display:flex;
@@ -74,7 +75,7 @@ hr {
 }
 
 .anchor {
-    padding: 3rem;
+    padding: 3vw;
 }
 
 .about-text {
@@ -102,5 +103,30 @@ img {
     margin-right: 8vw;
 }
 
+@media screen and (max-width: 800px) {
+    img {
+        height: 0;
+        width: 0;
+    }
 
+    .jumbotron {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .bi {
+        display: flex;
+    }
+}
+
+`;
+
+export const HeaderContainer = styled.header`
+    background: var(--cor-branco);
+    color: var(--cor-roxo-escuro);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; 
 `;

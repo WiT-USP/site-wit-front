@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import GlobalStyles from "../../../styles/GlobalStyles";
-import Header from "../../../components/user-components/header";
-import Footer from "../../../components/user-components/footer";
+import Header from "../../../components/user-components/computer-window/header";
+import HeaderCellPhone from "../../../components/user-components/cell-phone-window/header";
+import Footer from "../../../components/user-components/computer-window/footer";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,15 +10,35 @@ import Col from 'react-bootstrap/Col';
 import ImageAbout from "../../../assets/img/about_photo.png";
 
 
-import {Custom} from "./style"
+import {Custom, HeaderContainer} from "./style"
 
-export default function About() {
-
+const About: React.FC = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
 
     return (
         <div id="main-about">
             <GlobalStyles/>
-            <Header/>
+            {windowWidth > 700 ? (
+                <HeaderContainer>
+                    <Header/>
+                </HeaderContainer>
+                ) : (
+                <HeaderContainer>
+                    <HeaderCellPhone/>
+                </HeaderContainer>
+            )}
             <Custom>
                 <Container fluid>
                     <Row >
@@ -96,3 +117,4 @@ export default function About() {
         </div>
     )
 }
+export default About;

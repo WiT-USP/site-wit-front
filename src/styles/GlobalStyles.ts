@@ -12,7 +12,7 @@ export default createGlobalStyle`
         --degrade-roxo-rosa: linear-gradient(103.5deg, var(--cor-roxo-escuro) 8%, var(--cor-rosa) 350%);
         --degrade-roxo-rosa2: linear-gradient(145deg, var(--cor-roxo-escuro) 35%, var(--cor-rosa) 100%);
         --degrade-branco-cinza: linear-gradient(90deg, #D7D7D9 0%, var(--cor-branco) 75%);
-        --degrade-branco-rosa: linear-gradient(180deg, var(--cor-branco) 0%, var(--cor-rosa) 100%);
+        --degrade-branco-rosa: linear-gradient(180deg, var(--cor-branco) 0%, var(--cor-rosa) 200%);
         --font-family: 'Nunito', sans-serif;
         --font-logo: 'Inter', sans-serif;
     }

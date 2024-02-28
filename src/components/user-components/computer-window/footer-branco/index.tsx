@@ -2,9 +2,9 @@ import React from "react";
 
 import { Container } from "./style";
 
-import IconEmail from "../../../assets/img/icon-email-roxo.png";
-import IconInsta from "../../../assets/img/icon-insta-roxo.png";
-import IconLinkedin from "../../../assets/img/icon-linkedin-roxo.png";
+import IconEmail from "../../../../assets/img/icon-email-roxo.png";
+import IconInsta from "../../../../assets/img/icon-insta-roxo.png";
+import IconLinkedin from "../../../../assets/img/icon-linkedin-roxo.png";
 
 export default function FooterBranco() {
     const emailLink = "mailto:womenintech@icmc.usp.br";

@@ -1,8 +1,11 @@
 import React from "react";
 import GlobalStyles from "../../../styles/GlobalStyles";
-import Header from "../../../components/user-components/header";
-import Footer from "../../../components/user-components/footer";
-import CardEvent from "../../../components/user-components/card-event"
+import Header from "../../../components/user-components/computer-window/header";
+import Footer from "../../../components/user-components/computer-window/footer";
+import Filter from "../../../components/admin-components/search-bar";
+import CardsSet from "../../../components/user-components/computer-window/cards-set";
+
+import data from "../../../data/fakedataevent.json";
 
 import {Container, HeaderContainer, FooterContainer} from "./style"
 
@@ -13,20 +16,13 @@ export default function Events() {
             <HeaderContainer>
                 <Header/>
             </HeaderContainer>
-            <div className = 'events'>
-                <h1 className ='title'>EVENTOS EM ABERTO</h1>
-                <div className="cards">
-                    <CardEvent/>
-                </div>
-            </div>
-            <hr></hr>
-            <div className = 'events jumbotron'>
-                <h1 id='title-past' className ='title'>EVENTOS PASSADOS</h1>
-                <div className="cards">
-                    <CardEvent/>
-                    <CardEvent/>
-                    <CardEvent/>
-                </div>
+            <div className="main-area">
+                <Filter/>
+                <section className="cards-area">
+                    <div className="cards">
+                        <CardsSet cards={data}/>
+                    </div>
+                </section>
             </div>
             <FooterContainer>
                 <Footer/>

@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const Container = styled.div` 
     .banner-home {
         width: 100%;
+        margin-top: 100px;
     }
 
     .insta-title {
@@ -12,6 +13,14 @@ export const Container = styled.div`
         text-align: center;
         margin: 1.5em;
     }
+
+    @media screen and (max-width: 700px) {
+        .banner-home {
+            height: 30vh;
+            width: 100%;
+        }
+    }
+
 `;
 
 export const HeaderContainer = styled.header`

@@ -1,5 +1,4 @@
 import React from "react";
-import DynamicTag from "../card-tag";
 import CardProps from "../props/props-card";
 import { Container } from "./style";
 
