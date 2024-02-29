@@ -1,12 +1,15 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-    background: var(--cor-branco);
-    width: 80vw;
-    height: 60vh;
-    border-radius: 40px;
-    display: flex;
-    justify-content: space-between;
+
+    .main-div {
+        background: var(--cor-branco);
+        width: 80vw;
+        height: 60vh;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
 
     .column {
         display: flex;
@@ -37,13 +40,16 @@ export const Container = styled.div`
     p {
         font-weight: 500;
         font-size: 1.5em;
-        margin-top: 2em;
         line-height: 2.5em;
         
         span {
             font-weight: 700;
             color: var(--cor-roxo-escuro);
         }
+    }
+
+    #first-p {
+        margin-top: 1em;
     }
 
     .line-between {
@@ -127,6 +133,56 @@ export const Container = styled.div`
 
     .sub-item {
         margin: 0.5em;
+    }
+
+    @media screen and (max-width: 750px) {
+        .main-div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            padding: 0;
+        }
+
+        .column {
+            width: 100%;
+        }
+
+        #first-column {
+            padding-top: 12vh;
+            border-bottom: 2px dotted var(--cor-rosa);
+        }
+
+        .column-img {
+            width: 100%;
+            height: 15vh;
+            overflow: hidden;
+            border-radius: 40px 40px 0 0 ;
+            margin-top: -10vh;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            margin: 0 1em 0.5em 1em;
+        }
+
+        .modal-input {
+            width: 100%;
+        }
+
+        .modal-text {
+            font-size: 1.2em;
+        }
+
+        .modal-btn {
+            width: auto;
+        }
+        
     }
     
 `;

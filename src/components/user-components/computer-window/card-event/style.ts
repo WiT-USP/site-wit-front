@@ -14,6 +14,7 @@ export const Container = styled.div`
 
     h2 {
         font-size: 1.3em;
+        margin-top: 0.5em;
     }
 
     .menu:hover {
@@ -22,5 +23,11 @@ export const Container = styled.div`
 
     .menu:checked {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.0);
+    }
+
+    @media screen and (max-width: 700px) {
+        .menu {
+            width: 300px;
+        }
     }
 `;

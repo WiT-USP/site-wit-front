@@ -8,6 +8,7 @@ export const Container = styled.footer`
         width: 100%;
         justify-content: space-around;
         align-items: center;
+        flex: wrap;
     }
 
     h2 {
@@ -35,10 +36,16 @@ export const Container = styled.footer`
         .footer {
             height: 20vh;
             padding: 0 5vw;
+            justify-content: center;
+            ali
+            display: flex;
+            flex: wrap;
+            gap: 2vw;
+            flex-direction: colunm;
         }
 
         .bi {
-            font-size: 30px;
+            font-size: 45px;
         }
 
         h2 {
@@ -47,8 +54,13 @@ export const Container = styled.footer`
         
         .social-icons {
             display: flex;
-            felx-direction: colunm;
+            flex-direction: colunm;
+        }
+
+        .title {
+            width: 400px;
         }
     }
+    
 
 `;

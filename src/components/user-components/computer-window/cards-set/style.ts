@@ -10,5 +10,11 @@ export const Container = styled.div`
         overflow: auto;
         max-height: 58.9vh;
     }
+
+    @media screen and (max-width: 817px) {
+        .card-list {
+            justify-content: center;
+        }
+    }
 `;
 

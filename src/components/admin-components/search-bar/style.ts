@@ -8,7 +8,7 @@ export const Container = styled.div`
     .input-search {
         height: 3em;
         border-radius: 20px;
-        width: 40%;
+        width: 70vw;
         text-indent: 8.5em;
         fext-font: var(--font-family);
     }
@@ -16,7 +16,7 @@ export const Container = styled.div`
     .search-btn {
         position: absolute;
         top: 0.5vh;
-        left: 30vw;
+        left: 15vw;
         background: transparent;
     }
 
