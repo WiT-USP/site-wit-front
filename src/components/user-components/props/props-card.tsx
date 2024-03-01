@@ -6,6 +6,7 @@ interface CardProps extends HTMLProps<HTMLDivElement>{
     eventName: string;
     link_image: string;
     isSelected: boolean;
+    endDate?: Date;
     onClick?: () => void;
 }
 

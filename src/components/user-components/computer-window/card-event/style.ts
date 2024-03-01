@@ -18,11 +18,26 @@ export const Container = styled.div`
     }
 
     .menu:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
 
     .menu:checked {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.0);
+    }
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px; /* ajuste conforme necessário */
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
     }
 
     @media screen and (max-width: 700px) {

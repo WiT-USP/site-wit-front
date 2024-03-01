@@ -16,24 +16,45 @@ const CardsSet: React.FC<{ cards: CardProps[] }> = ({ cards }) => {
         }
     };
 
+    const currentDate = new Date();
+
     return (
         <Container>
             <div className="card-list">
                 {cards.map(card => (
-                    <Link to="/eventos-info" key={card.cardNumber}>
-                        <div
-                            className={`unique-card ${selectedCardId === card.cardNumber ? 'selected' : ''}`}
-                            onClick={() => handleClick(card.cardNumber)}
-                        >
-                            <Card
-                                cardNumber={card.cardNumber}
-                                eventName={card.eventName}
-                                link_image={card.link_image}
-                                isSelected={selectedCardId === card.cardNumber}
+                    <div className="unique-card" key={card.cardNumber}>
+                        {card.endDate && currentDate <= new Date(card.endDate) ? (
+                            <Link to="/eventos-info">
+                                <div
+                                    className={`unique-card ${selectedCardId === card.cardNumber ? 'selected' : ''}`}
+                                    onClick={() => handleClick(card.cardNumber)}
+                                >
+                                    <Card
+                                        cardNumber={card.cardNumber}
+                                        eventName={card.eventName}
+                                        link_image={card.link_image}
+                                        endDate={card.endDate}
+                                        isSelected={selectedCardId === card.cardNumber}
+                                        onClick={() => handleClick(card.cardNumber)}
+                                    />
+                                </div>
+                            </Link>
+                        ) : (
+                            <div
+                                className={`unique-card ${selectedCardId === card.cardNumber ? 'selected' : ''}`}
                                 onClick={() => handleClick(card.cardNumber)}
-                            />
-                        </div>
-                </Link>
+                            >
+                                <Card
+                                    cardNumber={card.cardNumber}
+                                    eventName={card.eventName}
+                                    link_image={card.link_image}
+                                    endDate={card.endDate}
+                                    isSelected={selectedCardId === card.cardNumber}
+                                    onClick={() => handleClick(card.cardNumber)}
+                                />
+                            </div>
+                        )}
+                    </div>
                 ))}
             </div>
         </Container>

@@ -7,6 +7,8 @@ import InfoEvent from "../../../components/user-components/computer-window/info-
 
 import {Container, HeaderContainer} from "./style"
 
+import eventImage from "../../../assets/img/card_image.png";
+
 const EventInfo: React.FC = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
@@ -34,7 +36,16 @@ const EventInfo: React.FC = () => {
                 </HeaderContainer>
             )}
             <div className="card-event">
-                <InfoEvent/>
+                <InfoEvent
+                  id={1}
+                  eventName="Minicurso Arduíno: parte 2"
+                  link_image= {eventImage}
+                  beginDate="29/02/24"
+                  beginTime="11:00"
+                  endTime="12:00"
+                  link_fotos="#"
+                  finalData="28/02/24"
+                />
             </div>
             <FooterBranco/>
         </Container>

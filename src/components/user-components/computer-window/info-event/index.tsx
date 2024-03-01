@@ -2,9 +2,19 @@ import React,{ useState } from "react";
 
 import { Container } from "./style";
 
-import CardImage from "../../../../assets/img/card_image.png";
+import InfoProps from "../../props/props-info-event";
 
-export default function InfoEvent() {
+const InfoEvent: React.FC<InfoProps> = ({
+    id,
+    eventName,
+    link_image,
+    beginDate,
+    beginTime,
+    endTime,
+    link_coffee,
+    link_fotos,
+    finalData
+}) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
@@ -19,16 +29,16 @@ export default function InfoEvent() {
         <Container>
             <div className="main-div">
                 <div className="column" id="first-column">
-                    <div className="column-img"> <img src={CardImage} alt="Banner do evento X"/> </div>
-                    <p id="first-p"><span>EVENTO: </span>Mulheres na Engenharia</p>
-                    <p><span>DATA: </span>23/11/23</p>
-                    <p><span>HORÁRIO: </span>19hs às 21h</p>
-                    <p><span>COFFEE: </span><a href="#">[URL]</a></p>
-                    <p><span>FOTOS: </span><a href="#">[URL]</a><br/></p>
+                    <div className="column-img"> <img src={link_image} alt="Banner do evento X"/> </div>
+                    <p id="first-p"><span>EVENTO: </span>{eventName}</p>
+                    <p><span>DATA: </span>{beginDate}</p>
+                    <p><span>HORÁRIO: </span>{beginTime} até às {endTime}</p>
+                    {link_coffee && <p><span>COFFEE: </span><a href={link_coffee}>Clique aqui</a></p>}
+                    <p><span>FOTOS: </span><a href={link_fotos}>Clique aqui</a></p>
                 </div>
                 <div className="line-between"></div>
                 <div className="column" id="second-column">
-                    <h1>INSCRIÇÕES ABERTAS ATÉ XX/XX</h1>
+                    <h1>INSCRIÇÕES ABERTAS ATÉ {finalData}</h1>
                     <form className="event-form" action="#" method="post">
                         <div id="itens" className="modal">
                             <div className="sub-item">
@@ -49,3 +59,4 @@ export default function InfoEvent() {
         </Container>
     )
 }
+export default InfoEvent;

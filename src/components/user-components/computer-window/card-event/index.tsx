@@ -8,8 +8,12 @@ const Card: React.FC<CardProps & { isSelected: boolean; onClick: () => void }> =
     eventName,
     link_image,
     isSelected,
+    endDate,
     onClick
 }) => {
+
+    const isEventPassed = endDate && endDate < new Date();
+
     return (
         <Container>
             <div
@@ -17,9 +21,12 @@ const Card: React.FC<CardProps & { isSelected: boolean; onClick: () => void }> =
                 style={{
                     boxShadow: isSelected ? "0px 0px 10px 3px var(--cor-roxo-claro)" : "0px 0px 10px 3px rgba(0, 0, 0, 0.3)"
                 }}
-                onClick={onClick}
+                onClick={isEventPassed ? undefined : onClick}
             >
-                <img src={link_image}/>
+                <div className="image-container">
+                    <img src={link_image} className="img-card" />
+                    {isEventPassed && <div className="overlay" />}
+                </div>
                 <h2>[{eventName}]</h2>
             </div>
         </Container>
