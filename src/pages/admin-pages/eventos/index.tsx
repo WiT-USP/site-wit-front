@@ -29,7 +29,7 @@ export default function EventosAdmin() {
                     <div className="buttons">
                         <DynamicButton text="Deletar" img_path={iconDelete}/>
                         <DynamicButton text="Editar" img_path={iconEdit}/>
-                        <a href="/criar-eventos">
+                        <a href="/admin/create/event">
                             <DynamicButton text="Novo Evento" img_path={iconAdd}/>
                         </a>
                     </div>

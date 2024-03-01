@@ -1,7 +1,5 @@
-import React from "react";
 import GlobalStyles from "../../../styles/GlobalStyles";
 import Header from "../../../components/admin-components/header"
-import Card from "../../../components/admin-components/card"
 import Filter from "../../../components/admin-components/search-bar";
 
 import iconDelete from "../../../assets/img/btn-delete.png"
@@ -11,7 +9,6 @@ import iconAdd from "../../../assets/img/icon-add.png"
 import {Container} from "./style";
 import DynamicButton from "../../../components/admin-components/btn";
 import CardsSet from "../../../components/admin-components/cards-set";
-import CradProps from "../../../components/admin-components/props/props-card";
 
 import data from "../../../data/fakedata.json";
 
@@ -29,7 +26,7 @@ export default function AtividadesAdmin() {
                     <div className="buttons">
                         <DynamicButton text="Deletar" img_path={iconDelete}/>
                         <DynamicButton text="Editar" img_path={iconEdit}/>
-                        <a href="/criar-atividade">
+                        <a href="/admin/create/activity">
                             <DynamicButton text="Nova Atividade" img_path={iconAdd}/>
                         </a>
                     </div>

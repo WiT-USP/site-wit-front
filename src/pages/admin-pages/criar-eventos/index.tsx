@@ -56,7 +56,7 @@ const EventosAdmin: React.FC = () => {
         <Container>
             <GlobalStyles/>
             <div className="header">
-                <a href="/certificados-admin">
+                <a href="/admin/events">
                     <MyButton text="Eventos"img_path={iconReturn}/>
                 </a>
                 <div className="logo">
