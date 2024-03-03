@@ -1,13 +1,15 @@
+import Activities from "../../../components/user-components/props/props-info-activity";
+
 interface InfoProps {
     id: number;
     eventName: string;
-    link_image: string;
-    beginDate: string;
-    beginTime: string;
+    // link_image: string;
+    beginDate: Date;
     link_coffee?: string;
-    link_fotos: string;
-    finalData: string;
-    activities: string[];
+    coffeeValue?: string;
+    link_fotos?: string;
+    finalDate: Date;
+    activities: Activities[];
 }
 
 export default InfoProps;
