@@ -15,6 +15,7 @@ export const Container = styled.div`
   h2 {
     font-size: 1.3em;
     margin-top: 0.5em;
+    text-align: center;
   }
 
   .menu:hover {

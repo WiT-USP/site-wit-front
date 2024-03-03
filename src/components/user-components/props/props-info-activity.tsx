@@ -1,13 +1,11 @@
 interface InfoProps {
     id: number;
-    eventName: string;
-    link_image: string;
+    activityName: string;
     beginDate: string;
     beginTime: string;
-    link_coffee?: string;
-    link_fotos: string;
+    endTime: string;
     finalData: string;
-    activities: string[];
+    event: string;
 }
 
 export default InfoProps;

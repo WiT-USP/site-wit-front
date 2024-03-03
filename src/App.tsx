@@ -4,6 +4,7 @@ import About from './pages/user-pages/about';
 import Home from './pages/user-pages/home';
 import Events from './pages/user-pages/events';
 import EventsInfo from './pages/user-pages/event-info';
+import ActivityInfo from './pages/user-pages/activity-info';
 import LoginAdmin from './pages/admin-pages/login';
 import EventsAdmin from './pages/admin-pages/eventos';
 import ActivitiesAdmin from "./pages/admin-pages/atividades";
@@ -20,7 +21,8 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/events" element={<Events/>} />
           <Route path="/about" element={<About/>} />
-          <Route path="/eventos-info" element={<EventsInfo/>} />
+          <Route path="/events/info/event" element={<EventsInfo/>} />
+          <Route path="/events/info/activity" element={<ActivityInfo/>} />
           <Route path="/admin/login" element={<LoginAdmin/>} />
           <Route path="/admin/events" element={<EventsAdmin/>} />
           <Route path="/admin/activities" element={<ActivitiesAdmin/>} />

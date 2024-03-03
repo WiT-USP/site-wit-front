@@ -35,6 +35,7 @@ const Events: React.FC = () => {
   console.log(webEvents);
 
   const cards_data = webEvents.map((evento) => ({
+    key: evento.id,
     cardNumber: evento.id,
     eventName: evento.name,
     isSelected: false,

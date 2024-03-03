@@ -3,13 +3,11 @@ import GlobalStyles from "../../../styles/GlobalStyles";
 import Header from "../../../components/user-components/computer-window/header";
 import HeaderBranco from "../../../components/user-components/cell-phone-window/header";
 import FooterBranco from "../../../components/user-components/computer-window/footer-branco";
-import InfoEvent from "../../../components/user-components/computer-window/info-event";
+import InfoActivity from "../../../components/user-components/computer-window/info-activity";
 
 import {Container, HeaderContainer} from "./style"
 
-import eventImage from "../../../assets/img/card_image.png";
-
-const EventInfo: React.FC = () => {
+const ActivityInfo: React.FC = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
     useEffect(() => {
@@ -36,19 +34,18 @@ const EventInfo: React.FC = () => {
                 </HeaderContainer>
             )}
             <div className="card-event">
-                <InfoEvent
+                <InfoActivity
                   id={1}
-                  eventName="Minicurso Arduíno: parte 2"
-                  link_image= {eventImage}
+                  activityName="Minicurso Arduíno: parte 2"
                   beginDate="29/02/24"
                   beginTime="11:00"
-                  link_fotos="#"
+                  endTime="12:00"
                   finalData="28/02/24"
-                  activities={["Minicurso Arduíno", "Roda de Conversa"]}
+                  event="AdaLovelaceDay"
                 />
             </div>
             <FooterBranco/>
         </Container>
     )
 }
-export default EventInfo;
+export default ActivityInfo;

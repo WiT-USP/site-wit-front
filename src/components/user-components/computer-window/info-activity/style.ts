@@ -16,6 +16,18 @@ export const Container = styled.div`
         flex-direction: column;
         padding: 2vw;
         width: 40vw;
+        display: flex;
+    }
+
+    #second-column {
+        display: flex;
+        align-items: center;
+    }
+
+    #first-column {
+        display: flex;
+        justify-content: left;
+        text-align: left;
     }
 
     .column-img {
@@ -49,7 +61,7 @@ export const Container = styled.div`
 
     .line-between {
         width: 2px; 
-        height: 90%; 
+        height: 90%; /* Altura igual à altura das colunas */
         background-color: var(--cor-rosa); 
         margin-top: 3vh;
     }
@@ -85,6 +97,37 @@ export const Container = styled.div`
         margin-bottom: 0.3em;
     }
 
+    .modal-input {
+        background: (--cor-branco);
+        border: 2px solid var(--cor-roxo-escuro);
+        border-radius: 60px;
+        padding: 10px;
+        width: 30vw;
+        font-type: var(--font-family);
+    }
+
+    .class-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-btn {
+        align-items: center;
+        background: var(--cor-roxo-escuro);
+        color: var(--cor-branco);
+        padding: 10px;
+        width: 20vw;
+        border-radius: 60px;
+        font-weight: 800;
+        font-size: 1.5em;
+        margin: 1.5em;       
+    }
+
+    .modal-btn:hover{
+        background: var(--cor-roxo-claro);
+    }
+
     .modal-p {
         text-align: left;
         font-weight: 800;
@@ -97,20 +140,6 @@ export const Container = styled.div`
 
     .sub-item {
         margin: 0.5em;
-    }
-
-    .activities-ul {
-        text-align: center;
-
-    }
-
-    .activity-li {
-        font-size: 1.5em;
-        color: var(--cor-roxo-escuro);
-    }
-
-    .activity-li:hover {
-        color: var(--cor-rosa);
     }
 
     @media screen and (max-width: 750px) {
@@ -140,7 +169,7 @@ export const Container = styled.div`
         }
 
         p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             line-height: 1.2em;
             margin-bottom: 0.5em;
         }
@@ -149,8 +178,16 @@ export const Container = styled.div`
             margin: 0 1em 0.5em 1em;
         }
 
+        .modal-input {
+            width: 100%;
+        }
+
         .modal-text {
             font-size: 1.2em;
+        }
+
+        .modal-btn {
+            width: auto;
         }
         
     }
