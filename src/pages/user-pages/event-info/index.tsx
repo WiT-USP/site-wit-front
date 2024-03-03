@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import HeaderBranco from "../../../components/user-components/cell-phone-window/header";
-import FooterBranco from "../../../components/user-components/computer-window/footer-branco";
-import Header from "../../../components/user-components/computer-window/header";
-import InfoEvent from "../../../components/user-components/computer-window/info-event";
-import GlobalStyles from "../../../styles/GlobalStyles";
+import { useParams } from "react-router-dom";
 
+import { getWebEvent } from "api/web/events/{eventId}/get";
+import eventImage from "assets/img/card_image.png";
+import HeaderBranco from "components/user-components/cell-phone-window/header";
+import FooterBranco from "components/user-components/computer-window/footer-branco";
+import Header from "components/user-components/computer-window/header";
+import InfoEvent from "components/user-components/computer-window/info-event";
+import GlobalStyles from "styles/GlobalStyles";
 import { Container, HeaderContainer } from "./style";
 
-import { useParams } from "react-router-dom";
-import { getWebEvent } from "../../../api/web/events/{eventId}/get";
-import eventImage from "../../../assets/img/card_image.png";
-
 const EventInfo: React.FC = () => {
-  const { eventId } = useParams<{ eventId: string }>();
+  const { eventId } = useParams();
 
   interface Evento {
     eventId: number;
@@ -27,7 +26,7 @@ const EventInfo: React.FC = () => {
     const fetchEvents = async () => {
       try {
         const data = await getWebEvent(parseInt(eventId!));
-        console.log("events: ", data);
+        console.log("event: ", data);
         setWebEvent(data);
       } catch (err) {
         console.error(err);
@@ -35,8 +34,6 @@ const EventInfo: React.FC = () => {
     };
     fetchEvents();
   }, [eventId]);
-
-  console.log(webEvent);
 
   useEffect(() => {
     const handleResize = () => {

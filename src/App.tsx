@@ -1,17 +1,17 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import GlobalStyles from "./styles/GlobalStyles";
-import About from "./pages/user-pages/about";
-import Home from "./pages/user-pages/home";
-import Events from "./pages/user-pages/events";
-import EventsInfo from "./pages/user-pages/event-info";
-import ActivityInfo from "./pages/user-pages/activity-info";
-import LoginAdmin from "./pages/admin-pages/login";
-import EventsAdmin from "./pages/admin-pages/eventos";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ActivitiesAdmin from "./pages/admin-pages/atividades";
 import CertificatesAdmin from "./pages/admin-pages/certificados";
-import CreateEventsAdmin from "./pages/admin-pages/criar-eventos";
 import CreateActivitiesAdmin from "./pages/admin-pages/create-activities";
 import CreateCertificateAdmin from "./pages/admin-pages/create-certificate";
+import CreateEventsAdmin from "./pages/admin-pages/criar-eventos";
+import EventsAdmin from "./pages/admin-pages/eventos";
+import LoginAdmin from "./pages/admin-pages/login";
+import About from "./pages/user-pages/about";
+import ActivityInfo from "./pages/user-pages/activity-info";
+import EventInfo from "./pages/user-pages/event-info";
+import Events from "./pages/user-pages/events";
+import Home from "./pages/user-pages/home";
+import GlobalStyles from "./styles/GlobalStyles";
 function App() {
   return (
     <Router>
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/about" element={<About />} />
-          <Route path="/events/info/:id" element={<EventsInfo />} />
+          <Route path="/events/info/:eventId" element={<EventInfo />} />
           <Route path="/events/info/:id" element={<ActivityInfo />} />
           <Route path="/admin/login" element={<LoginAdmin />} />
           <Route path="/admin/events" element={<EventsAdmin />} />
