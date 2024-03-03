@@ -26,7 +26,7 @@ const CardsSet: React.FC<{ cards: CardProps[] }> = ({ cards }) => {
         {cards.map((card) => (
           <div className="unique-card" key={card.cardNumber}>
             {card.endDate && currentDate <= new Date(card.endDate) ? (
-              <Link to="/eventos-info">
+              <Link to={`/events/info/${card.cardNumber}`}>
                 <div
                   className={`unique-card ${
                     selectedCardId === card.cardNumber ? "selected" : ""

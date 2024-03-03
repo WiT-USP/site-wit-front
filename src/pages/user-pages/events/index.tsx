@@ -11,8 +11,8 @@ import { Container, FooterContainer, HeaderContainer } from "./style";
 
 const Events: React.FC = () => {
   interface Evento {
-    id: number;
-    name: string;
+    eventId: number;
+    eventName: string;
     endDate: string;
   }
 
@@ -35,9 +35,9 @@ const Events: React.FC = () => {
   console.log(webEvents);
 
   const cards_data = webEvents.map((evento) => ({
-    key: evento.id,
-    cardNumber: evento.id,
-    eventName: evento.name,
+    key: evento.eventId,
+    cardNumber: evento.eventId,
+    eventName: evento.eventName,
     isSelected: false,
     endDate: new Date(evento.endDate),
   }));
