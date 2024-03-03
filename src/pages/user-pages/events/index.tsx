@@ -1,30 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
 
+import { getWebEvents } from "../../../api/web/events/get";
 import Filter from "../../../components/admin-components/search-bar";
+import HeaderBranco from "../../../components/user-components/cell-phone-window/header_branco";
 import CardsSet from "../../../components/user-components/computer-window/cards-set";
 import Footer from "../../../components/user-components/computer-window/footer";
 import Header from "../../../components/user-components/computer-window/header";
-import HeaderBranco from "../../../components/user-components/cell-phone-window/header_branco";
-import HeaderCellPhone from "../../../components/user-components/cell-phone-window/header";
-
 import GlobalStyles from "../../../styles/GlobalStyles";
-
-import { fakeEvents } from "../../../data/fakedataevent";
-
 import { Container, FooterContainer, HeaderContainer } from "./style";
 
 const Events: React.FC = () => {
+  interface Evento {
+    id: number;
+    name: string;
+    endDate: string;
+  }
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [webEvents, setWebEvents] = useState<Evento[]>([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const data = await getWebEvents();
+        console.log("events: ", data);
+        setWebEvents(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchEvents();
+  }, []);
+
+  console.log(webEvents);
+
+  const cards_data = webEvents.map((evento) => ({
+    cardNumber: evento.id,
+    eventName: evento.name,
+    isSelected: false,
+    endDate: new Date(evento.endDate),
+  }));
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
   return (
@@ -32,18 +57,18 @@ const Events: React.FC = () => {
       <GlobalStyles />
       {windowWidth > 700 ? (
         <HeaderContainer>
-          <Header/>
+          <Header />
         </HeaderContainer>
       ) : (
         <HeaderContainer>
-          <HeaderBranco/>
+          <HeaderBranco />
         </HeaderContainer>
       )}
       <div className="main-area">
         <Filter />
         <section className="cards-area">
           <div className="cards">
-            <CardsSet cards={fakeEvents} />
+            <CardsSet cards={cards_data} />
           </div>
         </section>
       </div>
@@ -52,5 +77,5 @@ const Events: React.FC = () => {
       </FooterContainer>
     </Container>
   );
-}
+};
 export default Events;
