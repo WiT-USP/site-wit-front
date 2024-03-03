@@ -1,11 +1,6 @@
 interface InfoProps {
-    id: number;
-    activityName: string;
-    beginDate: string;
-    beginTime: string;
-    endTime: string;
-    finalData: string;
-    event: string;
+    activityName: string; 
+    activityId: number; 
 }
 
 export default InfoProps;

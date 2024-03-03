@@ -5,9 +5,16 @@ import HeaderBranco from "../../../components/user-components/cell-phone-window/
 import FooterBranco from "../../../components/user-components/computer-window/footer-branco";
 import InfoActivity from "../../../components/user-components/computer-window/info-activity";
 
+import { getWebEvent } from "../../../api/web/events/{eventId}/get";
+
 import {Container, HeaderContainer} from "./style"
 
 const ActivityInfo: React.FC = () => {
+    interface Atividade {
+      activityName: string; 
+      activityId: number; 
+    }
+    const [webEvent, setWebEvent] = useState<Atividade[]>();
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
     useEffect(() => {
@@ -21,6 +28,11 @@ const ActivityInfo: React.FC = () => {
         window.removeEventListener('resize', handleResize);
       };
     }, []);
+    const activity_infos = webEvent ? webEvent.map((atividade) => ({
+      activityId: atividade.activityId,
+      activityName: atividade.activityName,
+      
+    })) : [];
     return (
         <Container>
             <GlobalStyles/>
@@ -34,15 +46,7 @@ const ActivityInfo: React.FC = () => {
                 </HeaderContainer>
             )}
             <div className="card-event">
-                <InfoActivity
-                  id={1}
-                  activityName="Minicurso Arduíno: parte 2"
-                  beginDate="29/02/24"
-                  beginTime="11:00"
-                  endTime="12:00"
-                  finalData="28/02/24"
-                  event="AdaLovelaceDay"
-                />
+                <InfoActivity infos={activity_infos}/>
             </div>
             <FooterBranco/>
         </Container>

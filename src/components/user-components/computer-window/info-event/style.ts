@@ -5,7 +5,7 @@ export const Container = styled.div`
     .main-div {
         background: var(--cor-branco);
         width: 80vw;
-        height: 60vh;
+        height: auto;
         border-radius: 40px;
         display: flex;
         justify-content: space-between;
@@ -16,12 +16,12 @@ export const Container = styled.div`
         flex-direction: column;
         padding: 2vw;
         width: 40vw;
+        width: 35vw;
     }
 
     .column-img {
         width: 35vw;
         height: 120px;
-        overflow: hidden;
         border-radius: 40px;
     }
 
@@ -34,7 +34,7 @@ export const Container = styled.div`
 
     p {
         font-weight: 500;
-        font-size: 1.5em;
+        font-size: 1.4em;
         line-height: 2.5em;
         
         span {
@@ -134,9 +134,7 @@ export const Container = styled.div`
         .column-img {
             width: 100%;
             height: 15vh;
-            overflow: hidden;
             border-radius: 40px 40px 0 0 ;
-            margin-top: -10vh;
         }
 
         p {

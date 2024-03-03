@@ -9,19 +9,24 @@ import { Container, HeaderContainer } from "./style";
 
 import { useParams } from "react-router-dom";
 import { getWebEvent } from "../../../api/web/events/{eventId}/get";
-import eventImage from "../../../assets/img/card_image.png";
+import Activities from "../../../components/user-components/props/props-info-activity";
 
 const EventInfo: React.FC = () => {
   const { eventId } = useParams<{ eventId: string }>();
 
   interface Evento {
-    eventId: number;
-    eventName: string;
-    endDate: string;
+    eventId: number; 
+    eventName: string; 
+    startDate: string; 
+    endDate: string; 
+    coffeePaymentURL: string; 
+    coffeeValue: string; 
+    galleryURL: string; 
+    activities: Activities[]; 
   }
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [webEvent, setWebEvent] = useState<Evento>();
+  const [webEvent, setWebEvent] = useState<Evento[]>();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -49,6 +54,17 @@ const EventInfo: React.FC = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const event_infos = webEvent ? webEvent.map((evento) => ({
+    id: evento.eventId,
+    eventName: evento.eventName,
+    beginDate: new Date(evento.startDate),
+    finalDate: new Date(evento.endDate),
+    link_coffee: evento.coffeePaymentURL,
+    coffeeValue: evento.coffeeValue,
+    link_fotos: evento.galleryURL,
+    activities: evento.activities,
+  })) : [];
   return (
     <Container>
       <GlobalStyles />
@@ -62,16 +78,7 @@ const EventInfo: React.FC = () => {
         </HeaderContainer>
       )}
       <div className="card-event">
-        <InfoEvent
-          id={1}
-          eventName="Minicurso Arduíno: parte 2"
-          link_image={eventImage}
-          beginDate="29/02/24"
-          beginTime="11:00"
-          link_fotos="#"
-          finalData="28/02/24"
-          activities={["Minicurso Arduíno", "Roda de Conversa"]}
-        />
+        <InfoEvent infos={event_infos}/>
       </div>
       <FooterBranco />
     </Container>
