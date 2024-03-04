@@ -11,7 +11,6 @@ export const Custom = styled.div`
   }
 
   h1 {
-    font-type: var(--font-logo);
     font-size: 3em;
     color: var(--cor-roxo-escuro);
   }

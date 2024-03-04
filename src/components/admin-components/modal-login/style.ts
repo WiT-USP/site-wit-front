@@ -46,7 +46,6 @@ export const Container = styled.div`
     border-radius: 60px;
     padding: 10px;
     width: 30vw;
-    font-type: var(--font-family);
   }
 
   .modal-btn {
