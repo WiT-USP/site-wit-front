@@ -22,7 +22,10 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/about" element={<About />} />
           <Route path="/events/info/:eventId" element={<EventInfo />} />
-          <Route path="/events/info/:id" element={<ActivityInfo />} />
+          <Route
+            path="/events/info/:eventId/activities/:activityId"
+            element={<ActivityInfo />}
+          />
           <Route path="/admin/login" element={<LoginAdmin />} />
           <Route path="/admin/events" element={<EventsAdmin />} />
           <Route path="/admin/activities" element={<ActivitiesAdmin />} />
