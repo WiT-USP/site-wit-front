@@ -24,12 +24,10 @@ const InfoActivity: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
   const handleSubmission = async (event: React.FormEvent) => {
     event.preventDefault(); // Evita o comportamento padrão de envio de formulário
     try {
-      const data = await postSubscribeUser(
-        parseInt(eventId!),
-        parseInt(activityId!),
-        { name, email }
-      );
-      console.log("Solicitação POST bem-sucedida:", data);
+      await postSubscribeUser(parseInt(eventId!), parseInt(activityId!), {
+        name,
+        email,
+      });
       setSubmitted(true);
     } catch (error) {
       console.error("Erro ao enviar a solicitação POST:", error);

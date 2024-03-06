@@ -18,19 +18,35 @@ const Events: React.FC = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [webEvents, setWebEvents] = useState<Evento[]>([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const data = await getWebEvents();
-        console.log("events: ", data);
+        let data;
+        data = await getWebEvents(search);
         setWebEvents(data);
       } catch (err) {
         console.error(err);
       }
     };
     fetchEvents();
-  }, []);
+  }, [search]);
+
+  const handleTextChange = (newText: string) => {
+    setSearch(newText);
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const handleSearch = () => {
+    console.log("Realizar pesquisa...");
+    // A pesquisa será acionada automaticamente através do useEffect com base na mudança do estado de 'search'
+  };
 
   const cards_data = webEvents.map((evento) => ({
     key: evento.eventId,
@@ -51,6 +67,7 @@ const Events: React.FC = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <Container>
       <GlobalStyles />
@@ -64,7 +81,7 @@ const Events: React.FC = () => {
         </HeaderContainer>
       )}
       <div className="main-area">
-        <Filter />
+        <Filter onSearch={handleTextChange} />
         <section className="cards-area">
           <div className="cards">
             <CardsSet cards={cards_data} />
@@ -77,4 +94,5 @@ const Events: React.FC = () => {
     </Container>
   );
 };
+
 export default Events;

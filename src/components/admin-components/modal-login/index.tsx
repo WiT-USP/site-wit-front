@@ -24,10 +24,9 @@ export default function ModalLogin() {
     event.preventDefault(); // Evita o comportamento padrão de envio de formulário
     try {
       const data = await postAdminLogin({ password: senha, email });
-      console.log("Solicitação POST bem-sucedida:", data);
       setToken(data.token);
 
-      navigate("/admin/events");
+      navigate(`/admin/events`);
 
       setSubmitted(true);
     } catch (error) {
@@ -61,7 +60,7 @@ export default function ModalLogin() {
               <h2 className="modal-text">Senha</h2>
               <input
                 className="modal-input"
-                type="text"
+                type="password"
                 value={senha}
                 onChange={handleChangeSenha}
                 placeholder="Entre com sua senha"

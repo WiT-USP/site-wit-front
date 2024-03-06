@@ -36,6 +36,8 @@ const CardsSet: React.FC<{ cards: CardProps[] }> = ({ cards }) => {
               workload={card.workload}
               isSelected={selectedCardId === card.cardNumber}
               onClick={() => handleClick(card.cardNumber)}
+              hasCoffee={card.hasCoffee}
+              hasCover={card.hasCover}
             />
           </div>
         ))}

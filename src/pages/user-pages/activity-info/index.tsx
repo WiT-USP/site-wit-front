@@ -34,7 +34,6 @@ const ActivityInfo: React.FC = () => {
           parseInt(eventId!),
           parseInt(activityId!)
         );
-        console.log("event: ", data);
         setWebActivity(data);
       } catch (err) {
         console.error(err);

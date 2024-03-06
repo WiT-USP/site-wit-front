@@ -2,19 +2,12 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-interface User {
-  email: string;
-  password: string;
-}
-
-const postAdminLogin = async (user: User) => {
+const getAdminActivities = async (search?: string) => {
   const baseURL = process.env.REACT_APP_BASE_URL_BACK_API!;
-
   try {
-    const response = await axios.post(baseURL + `/login`, {
-      password: user.password,
-      email: user.email,
-    });
+    const response = await axios.get(
+      baseURL + `/admin/activities?searchParam=${search}`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching web events:", error);
@@ -22,4 +15,4 @@ const postAdminLogin = async (user: User) => {
   }
 };
 
-export { postAdminLogin };
+export { getAdminActivities };

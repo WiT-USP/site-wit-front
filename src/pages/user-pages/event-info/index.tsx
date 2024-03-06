@@ -32,7 +32,6 @@ const EventInfo: React.FC = () => {
     const fetchEvents = async () => {
       try {
         const data = await getWebEvent(parseInt(eventId!));
-        console.log("event: ", data);
         setWebEvent(data);
       } catch (err) {
         console.error(err);
