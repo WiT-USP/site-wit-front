@@ -9,10 +9,14 @@ import iconEdit from "../../../assets/img/icon-edit.png";
 import { getAdminActivities } from "api/admin/activities/get";
 import CardsSet from "components/admin-components/cards-set";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import DynamicButton from "../../../components/admin-components/btn";
 import { Container } from "./style";
 
 export default function AtividadesAdmin() {
+  const navigate = useNavigate()
+
   interface Activity {
     activityId: number;
     eventName: string;
@@ -32,8 +36,19 @@ export default function AtividadesAdmin() {
         data = await getAdminActivities(search);
         console.log("activities: ", data);
         setAdminActivities(data);
-      } catch (err) {
-        console.error(err);
+      } catch (error: any) {
+        console.error(error);
+
+        const err = error?.response?.data?.error
+
+        if (err) {
+          Swal.fire({
+            title: err.title,
+            text: err.message,
+            confirmButtonText: 'OK',
+          })
+          navigate("/admin/login")
+        }
       }
     };
     fetchActivities();

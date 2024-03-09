@@ -6,6 +6,9 @@ import MyButton from "../../../components/admin-components/btn";
 import iconFinish from "../../../assets/img/icon-finish.png";
 import iconReturn from "../../../assets/img/icon-return.png";
 
+import { postAdminEvents } from "api/admin/events/post";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { Container } from "./style";
 
 interface FormValues {
@@ -21,6 +24,8 @@ interface FormValues {
 }
 
 const EventosAdmin: React.FC = () => {
+  const navigate = useNavigate();
+
   const [formValues, setFormValues] = useState<FormValues>({
     nomeEvento: "",
     inicio: "",
@@ -47,9 +52,34 @@ const EventosAdmin: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Formulário enviado:", formValues);
+  const handleSubmission = async (event: React.FormEvent) => {
+    event.preventDefault(); // Evita o comportamento padrão de envio de formulário
+    try {
+      await postAdminEvents({ 
+        eventName: formValues.nomeEvento,
+        startDate: formValues.inicio,
+        endDate: formValues.fim,
+        description: formValues.descricao,
+        cover: "",
+        coffeValue: formValues.valor,
+        coffeePaymentLink: formValues.linkPagamento,
+        driveGaleryLink: formValues.linkDrive
+       });
+
+      navigate(`/admin/events`);
+
+    } catch (error: any) {
+      console.error("Erro ao enviar a solicitação POST:", error);
+      const err = error?.response?.data?.error
+
+      if (err) {
+        Swal.fire({
+          title: err.title,
+          text: err.message,
+          confirmButtonText: 'OK',
+        })
+      }
+    }
   };
 
   return (
@@ -68,7 +98,7 @@ const EventosAdmin: React.FC = () => {
         </div>
       </div>
       <div className="forms-event">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmission}>
           <div className="primeira-linha">
             <label id="label-nome" className="label-event">
               Nome do evento:

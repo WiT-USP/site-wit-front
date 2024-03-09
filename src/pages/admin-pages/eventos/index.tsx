@@ -8,11 +8,15 @@ import iconEdit from "../../../assets/img/icon-edit.png";
 
 import { getAdminEvents } from "api/admin/events/get";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import DynamicButton from "../../../components/admin-components/btn";
 import CardsSet from "../../../components/admin-components/cards-set";
 import { Container } from "./style";
 
 export default function EventosAdmin() {
+  const navigate = useNavigate();
+
   interface Evento {
     eventId: number;
     eventName: string;
@@ -32,8 +36,19 @@ export default function EventosAdmin() {
         let data;
         data = await getAdminEvents(search);
         adminWebEvents(data);
-      } catch (err) {
-        console.error(err);
+      } catch (error: any) {
+        console.error(error);
+
+        const err = error?.response?.data?.error
+
+        if (err) {
+          Swal.fire({
+            title: err.title,
+            text: err.message,
+            confirmButtonText: 'OK',
+          })
+          navigate("/admin/login")
+        }
       }
     };
     fetchEvents();

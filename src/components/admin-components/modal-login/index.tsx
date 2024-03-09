@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Swal from 'sweetalert2';
 
 import { postAdminLogin } from "api/login/post";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +11,6 @@ export default function ModalLogin() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [token, setToken] = useState("");
 
   const handleChangeEmail = (event: any) => {
     setEmail(event.target.value);
@@ -23,14 +23,21 @@ export default function ModalLogin() {
   const handleSubmission = async (event: React.FormEvent) => {
     event.preventDefault(); // Evita o comportamento padrão de envio de formulário
     try {
-      const data = await postAdminLogin({ password: senha, email });
-      setToken(data.token);
+      await postAdminLogin({ password: senha, email });
 
       navigate(`/admin/events`);
 
       setSubmitted(true);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Erro ao enviar a solicitação POST:", error);
+      const err = error?.response?.data?.error
+
+      if (err) 
+        Swal.fire({
+          title: err.title,
+          text: err.message,
+          confirmButtonText: 'OK',
+        })
     }
   };
 

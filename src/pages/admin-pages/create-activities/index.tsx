@@ -7,28 +7,31 @@ import Dropdown from "../../../components/admin-components/dropdown";
 import iconFinish from "../../../assets/img/icon-finish.png";
 import iconReturn from "../../../assets/img/icon-return.png";
 
+import { postAdminActivities } from "api/admin/activities/post";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { Container } from "./style";
 
 interface FormValues {
   nomeEvento: string;
   inicio: string;
-  hora_inicio: string;
-  hora_fim: string;
+  fim: string;
   descricao: string;
   responsavel: string;
-  evento: string;
+  evento: number;
   data_final: string;
 }
 
 const ActivityAdmin: React.FC = () => {
+  const navigate = useNavigate();
+
   const [formValues, setFormValues] = useState<FormValues>({
     nomeEvento: "",
     inicio: "",
-    hora_inicio: "",
-    hora_fim: "",
+    fim: "",
     descricao: "",
     responsavel: "",
-    evento: "",
+    evento: -1,
     data_final: "",
   });
 
@@ -39,10 +42,38 @@ const ActivityAdmin: React.FC = () => {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Formulário enviado:", formValues);
+  const handleSubmission = async (event: React.FormEvent) => {
+    event.preventDefault(); 
+    try {
+      await postAdminActivities({ 
+        activityName: formValues.nomeEvento,
+        startTime: formValues.inicio,
+        endTime: formValues.fim,
+        description: formValues.descricao,
+        responsible: formValues.responsavel,
+        eventId: formValues.evento,
+        registrationAt: formValues.data_final
+       });
+
+      navigate(`/admin/events`);
+
+    } catch (error: any) {
+      console.error("Erro ao enviar a solicitação POST:", error);
+      const err = error?.response?.data?.error
+
+      if (err) {
+        Swal.fire({
+          title: err.title,
+          text: err.message,
+          confirmButtonText: 'OK',
+        })
+      }
+    }
   };
+
+  // Fazer o get para o dropdown
+  // Mostrar nomes dos eventos no dropdown
+  // Mas passar o id do evento ao invés do nome para func de post
 
   const options_drop = ["AdaLovelaceDay", "Hackathon", "WinX"];
 
@@ -62,7 +93,7 @@ const ActivityAdmin: React.FC = () => {
         </div>
       </div>
       <div className="forms-event">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmission}>
           <div className="primeira-linha">
             <label id="label-nome" className="label-event">
               Nome do evento:
@@ -81,26 +112,6 @@ const ActivityAdmin: React.FC = () => {
                 value={formValues.inicio}
                 onChange={handleInputChange}
                 placeholder="DD/MM/AAAA"
-              />
-            </label>
-            <label id="label-hora-inicio" className="label-event">
-              Hora de inicio:
-              <input
-                type="text"
-                name="hora_inicio"
-                value={formValues.hora_inicio}
-                onChange={handleInputChange}
-                placeholder="XX:XX"
-              />
-            </label>
-            <label id="label-hora-fim" className="label-event">
-              Hora de término:
-              <input
-                type="text"
-                name="hora_fim"
-                value={formValues.hora_fim}
-                onChange={handleInputChange}
-                placeholder="XX:XX"
               />
             </label>
           </div>
