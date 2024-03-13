@@ -79,6 +79,7 @@ const EventosAdmin: React.FC = () => {
           confirmButtonText: 'OK',
         })
       }
+      navigate("/admin/login")
     }
   };
 

@@ -18,7 +18,7 @@ const postAdminActivities = async (activity: Activity) => {
   const baseURL = process.env.REACT_APP_BASE_URL_BACK_API!;
 
   try {
-    const response = await axios.post(baseURL + `/admin/events`, {
+    const response = await axios.post(baseURL + `/admin/activities`, {
       activityName: activity.activityName,
       startTime: activity.startTime,
       endTime: activity.endTime,

@@ -1,13 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import GlobalStyles from "../../../styles/GlobalStyles";
 
 import MyButton from "../../../components/admin-components/btn";
-import Dropdown from "../../../components/admin-components/dropdown";
 
-import iconReturn from "../../../assets/img/icon-return.png";
 import iconFinish from "../../../assets/img/icon-finish.png";
+import iconReturn from "../../../assets/img/icon-return.png";
 
-import {Container} from "./style"
+import { Container } from "./style";
 
 interface FormValues {
     cargaHoraria: string;
@@ -45,7 +44,7 @@ const EventosAdmin: React.FC = () => {
       console.log('Formulário enviado:', formValues);
     };
 
-    const options_drop = ['Minicurso Arduíno', 'Roda de Conversa', 'Palestra linkedin'];
+    // const options_drop = ['Minicurso Arduíno', 'Roda de Conversa', 'Palestra linkedin'];
   
     return (
         <Container>
@@ -67,7 +66,7 @@ const EventosAdmin: React.FC = () => {
                         </label>
                         <label id="label-atividade" className="label-event">
                             Atividade:
-                            <Dropdown options={options_drop} />
+                            {/* <Dropdown options={options_drop} /> */}
                         </label>
                     </div>
                     <label id="label-descricao" className="label-event">
