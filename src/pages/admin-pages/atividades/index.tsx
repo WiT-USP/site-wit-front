@@ -7,6 +7,7 @@ import iconAdd from "../../../assets/img/icon-add.png";
 import iconEdit from "../../../assets/img/icon-edit.png";
 
 import { getAdminActivities } from "api/admin/activities/get";
+import { deleteAdminActivityById } from "api/admin/activities/{acitvityId}/delete";
 import CardsSet from "components/admin-components/cards-set";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -28,6 +29,11 @@ export default function AtividadesAdmin() {
 
   const [adminActivities, setAdminActivities] = useState<Activity[]>([]);
   const [search, setSearch] = useState("null");
+  const [activityId, setActivityId] = useState(-1)
+
+  const handleSelectedActivity = (activitySelected: number) => {
+    setActivityId(activitySelected)
+  }
 
   useEffect(() => {
     const fetchActivities = async () => {
@@ -71,6 +77,42 @@ export default function AtividadesAdmin() {
     hasCoffee: false,
   }));
 
+
+  const handleNewActivity = () => {
+    navigate("/admin/create/activity")
+  }
+
+  const handleDeleteActivity = async () => {
+    try {
+      if (activityId < 0) throw new Error("evento não existe");
+      
+      await deleteAdminActivityById(activityId);
+
+      Swal.fire({
+        title: "Atividade apagada.",
+        text: `A atividade de id ${activityId} foi apagada com sucesso!`,
+        confirmButtonText: 'Voltar',
+      }).then((result: any) => {
+        if(result.isConfirmed) {
+          window.location.reload()
+        }
+      })
+
+    } catch (error: any) {
+      console.error("Erro ao enviar a solicitação DELETE:", error);
+      const err = error?.response?.data?.error
+
+      if (err) {
+        Swal.fire({
+          title: err.title,
+          text: err.message,
+          confirmButtonText: 'OK',
+        })
+      }
+      navigate("/admin/login")
+    }
+  }
+
   return (
     <Container>
       <GlobalStyles />
@@ -82,15 +124,13 @@ export default function AtividadesAdmin() {
             <h2 className="text">Atividades Criadas:</h2>
           </div>
           <div className="buttons">
-            <DynamicButton text="Deletar" img_path={iconDelete} />
+            <DynamicButton text="Deletar" img_path={iconDelete} onAction={handleDeleteActivity} />
             <DynamicButton text="Editar" img_path={iconEdit} />
-            <a href="/admin/create/activity">
-              <DynamicButton text="Nova Atividade" img_path={iconAdd} />
-            </a>
+            <DynamicButton text="Nova Atividade" img_path={iconAdd} onAction={handleNewActivity} />
           </div>
         </div>
         <div className="cards">
-          <CardsSet cards={cards_data} />
+          <CardsSet onSelected={handleSelectedActivity} cards={cards_data} />
         </div>
       </section>
     </Container>

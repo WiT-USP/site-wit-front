@@ -81,11 +81,11 @@ const Card: React.FC<
               <DynamicTag isTrue={hasCoffee} text="Coffee" link="#" />
             </>
           )}
-          {isActivitiesPage && (
+          {/* {isActivitiesPage && (
             <>
               <DynamicTag isTrue={true} text="Certificado" link="#" />
             </>
-          )}
+          )} */}
           {isCertificatesPage && (
             <>
               <DynamicTag isTrue={true} text="Template" link="#" />

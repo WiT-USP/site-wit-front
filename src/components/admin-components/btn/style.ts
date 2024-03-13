@@ -23,7 +23,7 @@ export const Container = styled.div`
         font-weight: 700;
     }
 
-    .dynamic-button: hover {
+    .dynamic-button:hover {
         transform: scale(1.05);
     }
 

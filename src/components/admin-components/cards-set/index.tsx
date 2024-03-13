@@ -3,7 +3,7 @@ import Card from "../card";
 import CardProps from "../props/props-card";
 import { Container } from "./style";
 
-const CardsSet: React.FC<{ cards: CardProps[] }> = ({ cards }) => {
+const CardsSet: React.FC<{ cards: CardProps[], onSelected: (eventId: number) => void }> = ({ cards, onSelected}) => {
   const [selectedCardId, setSelectedCardId] = React.useState<number | null>(
     null
   );
@@ -13,6 +13,7 @@ const CardsSet: React.FC<{ cards: CardProps[] }> = ({ cards }) => {
       setSelectedCardId(null);
     } else {
       setSelectedCardId(cardNumber);
+      onSelected(cardNumber)
     }
   };
 

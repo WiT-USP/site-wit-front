@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 
 import Tag from "../card-tag";
@@ -19,7 +18,7 @@ export default function Header() {
             <div className = "menu">
                 <Tag className="tag" text="Eventos" isTrue={isEventsPage} link="/admin/events"></Tag>
                 <Tag className="tag" text="Atividades" isTrue={isActivitiesPage} link="/admin/activities"></Tag>
-                <Tag className="tag" text="Certificados" isTrue={isCertificatesPage} link="/admin/certificates"></Tag>
+                {/* <Tag className="tag" text="Certificados" isTrue={isCertificatesPage} link="/admin/certificates"></Tag> */}
             </div>
         </Container>
     )
