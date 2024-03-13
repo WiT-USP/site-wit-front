@@ -7,9 +7,10 @@ const getWebEvent = async (eventId: number) => {
     const response = await axios.get(baseURL + `/web/events/${eventId}`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[getWebEvent] error: ", error);
     throw error;
   }
 };
 
 export { getWebEvent };
+

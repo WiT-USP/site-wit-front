@@ -9,9 +9,10 @@ const getWebEvents = async (search?: string) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[getWebEvents] error: ", error);
     throw error;
   }
 };
 
 export { getWebEvents };
+

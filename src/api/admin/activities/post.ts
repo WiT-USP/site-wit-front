@@ -29,7 +29,7 @@ const postAdminActivities = async (activity: Activity) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[postAdminActivities] error: ", error);
     throw error;
   }
 };

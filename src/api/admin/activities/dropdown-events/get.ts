@@ -10,7 +10,7 @@ const getAdminActivitiesDropdown = async () => {
     );
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[getAdminActivitiesDropdown] error: ", error);
     throw error;
   } 
 };

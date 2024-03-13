@@ -11,9 +11,10 @@ const getAdminEvents = async (search?: string) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[getAdminEvents] error: ", error);
     throw error;
   }
 };
 
 export { getAdminEvents };
+

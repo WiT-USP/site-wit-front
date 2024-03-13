@@ -22,9 +22,10 @@ const postSubscribeUser = async (
     );
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[postSubscribeUser] error: ", error);
     throw error;
   }
 };
 
 export { postSubscribeUser };
+

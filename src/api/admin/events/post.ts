@@ -29,7 +29,7 @@ const postAdminEvents = async (event: Event) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[postAdminEvents] error: ", error);
     throw error;
   }
 };

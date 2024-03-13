@@ -17,9 +17,10 @@ const postAdminLogin = async (user: User) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[postAdminLogin] error: ", error);
     throw error;
   }
 };
 
 export { postAdminLogin };
+

@@ -9,9 +9,10 @@ const getWebActivity = async (eventId: number, activityId: number) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Error fetching web events:", error);
+    console.error("[getWebActivity] error: ", error);
     throw error;
   }
 };
 
 export { getWebActivity };
+
