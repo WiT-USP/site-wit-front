@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GlobalStyles from "../../../styles/GlobalStyles";
 
 import MyButton from "../../../components/admin-components/btn";
@@ -6,8 +6,9 @@ import MyButton from "../../../components/admin-components/btn";
 import iconFinish from "../../../assets/img/icon-finish.png";
 import iconReturn from "../../../assets/img/icon-return.png";
 
-import { postAdminEvents } from "api/admin/events/post";
-import { useNavigate } from "react-router-dom";
+import { getAdminEventById } from "api/admin/events/{eventId}/get";
+import { updateAdminEventById } from "api/admin/events/{eventId}/put";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Container } from "./style";
 
@@ -25,6 +26,7 @@ interface FormValues {
 
 const EventosAdmin: React.FC = () => {
   const navigate = useNavigate();
+  const { eventId } = useParams();
 
   const [formValues, setFormValues] = useState<FormValues>({
     nomeEvento: "",
@@ -37,6 +39,31 @@ const EventosAdmin: React.FC = () => {
     linkDrive: "",
     lugar: "",
   });
+
+
+  useEffect(() => {
+    const fetchEventDetails = async (eventId : number) => {
+      try {
+        const eventData = await getAdminEventById(eventId);
+        setFormValues({
+          nomeEvento: eventData.eventName,
+          inicio: eventData.startDate,
+          fim: eventData.endDate,
+          descricao: eventData.description,
+          banner: eventData.hasCover,
+          valor: eventData.coffeeValue,
+          linkPagamento: "",
+          linkDrive: eventData.driveGalleryLink,
+          lugar: eventData.local,
+        });
+      } catch (error) {
+        console.error("Erro ao buscar detalhes do evento:", error);
+      }
+    };
+    if (eventId) {
+      fetchEventDetails(parseInt(eventId));
+    }
+    }, [eventId]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -55,21 +82,22 @@ const EventosAdmin: React.FC = () => {
   const handleSubmission = async (event: React.FormEvent) => {
     event.preventDefault(); // Evita o comportamento padrão de envio de formulário
     try {
-      await postAdminEvents({ 
-        eventName: formValues.nomeEvento,
-        startDate: formValues.inicio,
-        endDate: formValues.fim,
-        description: formValues.descricao,
-        cover: "",
-        coffeValue: formValues.valor,
-        coffeePaymentLink: formValues.linkPagamento,
-        driveGaleryLink: formValues.linkDrive
-       });
-
+      if (eventId) {
+        await updateAdminEventById({ 
+          eventId: parseInt(eventId),
+          eventName: formValues.nomeEvento,
+          startDate: formValues.inicio,
+          endDate: formValues.fim,
+          description: formValues.descricao,
+          coffeeValue: formValues.valor,
+          driveGalleryLink: formValues.linkDrive
+        });
+      }
+      
       navigate(`/admin/events`);
 
     } catch (error: any) {
-      console.error("Erro ao enviar a solicitação POST:", error);
+      console.error("Erro ao enviar a solicitação PUT:", error);
       const err = error?.response?.data?.error
 
       if (err) {
@@ -79,7 +107,6 @@ const EventosAdmin: React.FC = () => {
           confirmButtonText: 'OK',
         })
       }
-      navigate("/admin/login")
     }
   };
 

@@ -82,6 +82,10 @@ export default function AtividadesAdmin() {
     navigate("/admin/create/activity")
   }
 
+  const handleEditActivity = () => {
+    navigate(`/admin/edit/activity/${activityId}`)
+  }
+
   const handleDeleteActivity = async () => {
     try {
       if (activityId < 0) throw new Error("evento não existe");
@@ -125,7 +129,7 @@ export default function AtividadesAdmin() {
           </div>
           <div className="buttons">
             <DynamicButton text="Deletar" img_path={iconDelete} onAction={handleDeleteActivity} />
-            <DynamicButton text="Editar" img_path={iconEdit} />
+            <DynamicButton text="Editar" img_path={iconEdit} onAction={handleEditActivity}/>
             <DynamicButton text="Nova Atividade" img_path={iconAdd} onAction={handleNewActivity} />
           </div>
         </div>

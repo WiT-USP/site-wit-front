@@ -9,7 +9,8 @@ import iconReturn from "../../../assets/img/icon-return.png";
 
   import { getAdminActivitiesDropdown } from "api/admin/activities/dropdown-events/get";
 import { postAdminActivities } from "api/admin/activities/post";
-import { useNavigate } from "react-router-dom";
+import { getAdminActivityById } from "api/admin/activities/{acitvityId}/get";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Container } from "./style";
 
@@ -30,6 +31,7 @@ import { Container } from "./style";
 
   const ActivityAdmin: React.FC = () => {
     const navigate = useNavigate();
+    const { activityId } = useParams();
 
     const [submitedButton, setSubmitedButton] = useState(false)
     const [options, setOptions] = useState<DropdownProps[]>([])
@@ -42,6 +44,30 @@ import { Container } from "./style";
       evento: -1,
       data_final: "",
     });
+
+    useEffect(() => {
+      const fetchActivityDetails = async (activityId : number) => {
+        try {
+          const activityData = await getAdminActivityById(activityId);
+
+          console.log("[activityData] ", activityData)
+          setFormValues({
+            nomeEvento: activityData.activityName,
+            inicio: activityData.startDate,
+            fim: activityData.endDate,
+            descricao: activityData.description,
+            responsavel: activityData.responsible,
+            evento: activityData.eventId,
+            data_final: activityData.registrationAt,
+          });
+        } catch (error) {
+          console.error("Erro ao buscar detalhes da atividade:", error);
+        }
+      };
+      if (activityId) {
+        fetchActivityDetails(parseInt(activityId));
+      }
+      }, [activityId]);
 
     const handleButtonClick = () => {
       setSubmitedButton(true);

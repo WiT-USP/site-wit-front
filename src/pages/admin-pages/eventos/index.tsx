@@ -82,6 +82,10 @@ export default function EventosAdmin() {
     navigate("/admin/create/event")
   }
 
+  const handleEditEvent = () => {
+    navigate(`/admin/edit/event/${eventId}`)
+  }
+
   const handleDeleteEvent = async () => {
     try {
       if (eventId < 0) throw new Error("evento não existe");
@@ -125,7 +129,7 @@ export default function EventosAdmin() {
           </div>
           <div className="buttons">
             <DynamicButton text="Deletar" img_path={iconDelete} onAction={handleDeleteEvent} /> 
-            <DynamicButton text="Editar" img_path={iconEdit} />
+            <DynamicButton text="Editar" img_path={iconEdit} onAction={handleEditEvent}/>
             <DynamicButton text="Novo Evento" img_path={iconAdd} onAction={handleNewEvent} />
           </div>
         </div>

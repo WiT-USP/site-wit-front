@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 
 export const Container = styled.div` 
     background: var(--cor-roxo-claro);
+    height: 100vh;
 
     .btn-area {
         display: flex;
@@ -13,6 +14,7 @@ export const Container = styled.div`
     .cards-area {
         background: var(--cor-branco);
         border-radius: 20px 20px 0 0;
+        height: 66%;
         margin: 5vh 5vw;
     }
 

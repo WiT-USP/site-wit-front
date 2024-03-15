@@ -4,6 +4,8 @@ import CertificatesAdmin from "./pages/admin-pages/certificados";
 import CreateActivitiesAdmin from "./pages/admin-pages/create-activities";
 import CreateCertificateAdmin from "./pages/admin-pages/create-certificate";
 import CreateEventsAdmin from "./pages/admin-pages/criar-eventos";
+import EditActivitiesAdmin from "./pages/admin-pages/editar-atividades";
+import EditEventsAdmin from "./pages/admin-pages/editar-eventos";
 import EventsAdmin from "./pages/admin-pages/eventos";
 import LoginAdmin from "./pages/admin-pages/login";
 import About from "./pages/user-pages/about";
@@ -31,6 +33,8 @@ function App() {
           <Route path="/admin/activities" element={<ActivitiesAdmin />} />
           <Route path="/admin/certificates" element={<CertificatesAdmin />} />
           <Route path="/admin/create/event" element={<CreateEventsAdmin />} />
+          <Route path="/admin/edit/event/:eventId" element={<EditEventsAdmin/>} />
+          <Route path="/admin/edit/activity/:activityId" element={<EditActivitiesAdmin/>} />
           <Route
             path="/admin/create/activity"
             element={<CreateActivitiesAdmin />}
