@@ -8,8 +8,8 @@ import Dropdown from "../../../components/admin-components/dropdown";
 import iconReturn from "../../../assets/img/icon-return.png";
 
   import { getAdminActivitiesDropdown } from "api/admin/activities/dropdown-events/get";
-import { postAdminActivities } from "api/admin/activities/post";
 import { getAdminActivityById } from "api/admin/activities/{acitvityId}/get";
+import { updateAdminActivityById } from "api/admin/activities/{acitvityId}/put";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Container } from "./style";
@@ -53,8 +53,8 @@ import { Container } from "./style";
           console.log("[activityData] ", activityData)
           setFormValues({
             nomeEvento: activityData.activityName,
-            inicio: activityData.startDate,
-            fim: activityData.endDate,
+            inicio: activityData.startTime,
+            fim: activityData.endTime,
             descricao: activityData.description,
             responsavel: activityData.responsible,
             evento: activityData.eventId,
@@ -81,34 +81,34 @@ import { Container } from "./style";
     };
 
     const handleSubmission = async (event: React.FormEvent) => {
-      event.preventDefault();
-
+      event.preventDefault(); // Evita o comportamento padrão de envio de formulário
       try {
-        if(submitedButton){
-          await postAdminActivities({
+        if (activityId) {
+          await updateAdminActivityById({ 
+            activityId: parseInt(activityId),
             activityName: formValues.nomeEvento,
+            responsible: formValues.responsavel,
+            description: formValues.descricao,
             startTime: formValues.inicio,
             endTime: formValues.fim,
-            description: formValues.descricao,
-            responsible: formValues.responsavel,
-            eventId: formValues.evento,
             registrationAt: formValues.data_final,
+            eventId: formValues.evento
           });
-      
-          navigate(`/admin/activities`);
         }
+        
+        navigate(`/admin/activities`);
+  
       } catch (error: any) {
-        console.error("Erro ao enviar a solicitação POST:", error);
-        const err = error?.response?.data?.error;
-    
+        console.error("Erro ao enviar a solicitação PUT:", error);
+        const err = error?.response?.data?.error
+  
         if (err) {
           Swal.fire({
             title: err.title,
             text: err.message,
-            confirmButtonText: "OK",
-          });
+            confirmButtonText: 'OK',
+          })
         }
-        navigate("/admin/login")
       }
     };
 

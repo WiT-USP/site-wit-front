@@ -31,7 +31,7 @@ const updateAdminEventById = async (event: EventParams) => {
     );
     return response.data;
   } catch (error) {
-    console.error("[getAdminEventById] error: ", error);
+    console.error("[updateAdminEventById] error: ", error);
     throw error;
   }
 };

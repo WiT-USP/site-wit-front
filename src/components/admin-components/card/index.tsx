@@ -26,6 +26,8 @@ const Card: React.FC<
   const isEventsPage = currentPage === "/admin/events";
   const isActivitiesPage = currentPage === "/admin/activities";
   const isCertificatesPage = currentPage === "/admin/certificates";
+  console.log("startTime Activity: ", startTime)
+  console.log("endTime Activity: ", endTime)
 
   const formatDate = (date: Date): string => {
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;

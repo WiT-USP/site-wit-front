@@ -84,6 +84,7 @@ const EventosAdmin: React.FC = () => {
     try {
       if (eventId) {
         await updateAdminEventById({ 
+          local: formValues.lugar,
           eventId: parseInt(eventId),
           eventName: formValues.nomeEvento,
           startDate: formValues.inicio,
