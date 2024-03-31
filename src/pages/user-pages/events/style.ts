@@ -37,4 +37,7 @@ export const FooterContainer = styled.footer`
   background: var(--degrade-roxo-rosa);
   color: var(--cor-preto);
   height: 15vh;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 `;

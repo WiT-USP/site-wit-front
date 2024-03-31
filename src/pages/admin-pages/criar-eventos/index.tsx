@@ -174,7 +174,7 @@ const EventosAdmin: React.FC = () => {
                 type="text"
                 name="valor"
                 onChange={handleInputChange}
-                placeholder="R$ XX,XX"
+                placeholder="XX.XX"
               />
             </label>
             <label id="label-link" className="label-event">
