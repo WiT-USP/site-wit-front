@@ -11,7 +11,7 @@ export default function Header() {
                 <li>|</li>
                 <li><a href="/events">EVENTOS</a></li>
                 <li>|</li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdWdXTotBHwLZQjpmAgYaknlDFF62Hi1Mr_MexTv08t7dn06A/viewform">PARTICIPE</a></li>
+                <li><a href="/hackathon">HACKATHON</a></li>
             </div>
         </Container>
     )

@@ -16,7 +16,6 @@ export const Container = styled.div`
 
     @media screen and (max-width: 700px) {
         .banner-home {
-            height: 30vh;
             width: 100%;
         }
     }

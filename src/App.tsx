@@ -13,6 +13,7 @@ import ActivityInfo from "./pages/user-pages/activity-info";
 import EventInfo from "./pages/user-pages/event-info";
 import Events from "./pages/user-pages/events";
 import Home from "./pages/user-pages/home";
+import HomeHackathon from "pages/thematic-pages/hackathon2024";
 import GlobalStyles from "./styles/GlobalStyles";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <GlobalStyles />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/hackathon" element={<HomeHackathon />} />
           <Route path="/events" element={<Events />} />
           <Route path="/about" element={<About />} />
           <Route path="/events/info/:eventId" element={<EventInfo />} />

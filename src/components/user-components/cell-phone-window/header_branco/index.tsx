@@ -28,8 +28,8 @@ const HamburgerMenuBranco: React.FC = () => {
                     <a href="/events">
                         <li>Eventos</li>
                     </a>
-                    <a href="#participe">
-                        <li>Participe</li>
+                    <a href="/hackathon">
+                        <li>Hackathon</li>
                     </a>
                 </ul>
             )}
