@@ -118,6 +118,7 @@ export const Container = styled.div`
     .itens-programacao-hackathon {
         display: flex;
         align-items: center;
+        flex: grid;
     }
 
     .map-img {
@@ -163,6 +164,12 @@ export const Container = styled.div`
 
         .faq {
 
+        }
+
+        .itens-programacao-hackathon {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
     }
 
