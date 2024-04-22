@@ -116,10 +116,12 @@ const HomeHackathon: React.FC = () => {
         </div>
         <div className='programacao-hackathon'>
             <h1 className='title' id='title-programacao'>PROGRAMAÇÃO</h1>
-            <img className='line-time' src={lineTimeImage} alt="Linha do tempo dos eventos. Primeiro a abetura das inscrições, no dia 21 de abril, depois encerramento, no dia 30 de abril, pré-evento, no dia 11 de maio, e evento, no dia 19 de maio"/>
-            <a href="https://www.google.com.br/maps/place/ICMC+-+Instituto+De+Ci%C3%AAncias+Matem%C3%A1ticas+e+de+Computa%C3%A7%C3%A3o/@-22.0067139,-47.8966429,18z/data=!4m14!1m7!3m6!1s0x94b877331ff771f5:0x2f41205c0a5157ab!2sICMC+-+Instituto+de+Ci%C3%AAncias+Matem%C3%A1ticas+e+de+Computa%C3%A7%C3%A3o!8m2!3d-22.0071839!4d-47.8942557!16s%2Fg%2F12cpl8d1t!3m5!1s0x94b877325a2f2381:0x7923e6d8ad682ad1!8m2!3d-22.0070347!4d-47.8949323!16s%2Fg%2F121pdbdw?entry=ttu">
-              <img className ='map-img' src={MapImage} alt="Mapa do local do evento, localizado no ICMC USP São Carlos"/>
-            </a>
+            <div className='itens-programacao-hackathon'>
+              <img className='line-time' src={lineTimeImage} alt="Linha do tempo dos eventos. Primeiro a abetura das inscrições, no dia 21 de abril, depois encerramento, no dia 30 de abril, pré-evento, no dia 11 de maio, e evento, no dia 19 de maio"/>
+              <a href="https://www.google.com.br/maps/place/ONOVOLAB+S%C3%A3o+Carlos/@-22.0239824,-47.895657,17.95z/data=!4m6!3m5!1s0x94b8773d06b8be6d:0x8fc2b322136f2e37!8m2!3d-22.024173!4d-47.8943544!16s%2Fg%2F11hblpj151?entry=ttu">
+                <img className ='map-img' src={MapImage} alt="Mapa do local do evento, localizado no ICMC USP São Carlos"/>
+              </a>
+            </div>
         </div>
         <div className='faq'>
             <h1 className='title'>FAQ</h1>

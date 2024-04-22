@@ -115,9 +115,14 @@ export const Container = styled.div`
         background: var(--degrade-branco-roxo);
     }
 
+    .itens-programacao-hackathon {
+        display: flex;
+        align-items: center;
+    }
+
     .map-img {
-        width: 40%;
-        height: 40%;
+        width: 80%;
+        height: 80%;
         margin: 0 5vw;
     }
 
