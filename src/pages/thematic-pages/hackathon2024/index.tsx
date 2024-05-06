@@ -109,6 +109,8 @@ const HomeHackathon: React.FC = () => {
             </div>
             <div className='bronze'>
               <div className='patrocinio'>
+                <img className='bronze-img' src={FundacaoEstudar}/>
+                <p className='bronze-text'>FUNDAÇÃO ESTUDAR</p>
               </div>
               <div className='patrocinio'>
               </div>

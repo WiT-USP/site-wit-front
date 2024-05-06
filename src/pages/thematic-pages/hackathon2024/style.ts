@@ -82,7 +82,7 @@ export const Container = styled.div`
     }
 
     .gold-img {
-        height: 80px;
+        height: 100px;
     }
 
     .gold-text {
@@ -102,7 +102,7 @@ export const Container = styled.div`
     }
 
     .bronze-img {
-        height: 70px;
+        height: 50px;
     }
 
     .bronze-text {
