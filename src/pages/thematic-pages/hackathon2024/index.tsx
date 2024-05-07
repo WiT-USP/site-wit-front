@@ -13,6 +13,7 @@ import Google from "../../../assets/img/patrocinadores/Google.png";
 import PG from "../../../assets/img/patrocinadores/PG.png";
 import Arquivei from "../../../assets/img/patrocinadores/arquivei.png";
 import FundacaoEstudar from "../../../assets/img/patrocinadores/FunEstudar.png";
+import Cemeai from "../../../assets/img/patrocinadores/cemeai.png";
 import AdaTech from "../../../assets/img/patrocinadores/ada.png";
 
 import {Container, HeaderContainer} from "./style"
@@ -99,6 +100,8 @@ const HomeHackathon: React.FC = () => {
             <h1 className='title'>AGRADECIMENTO AOS NOSSOS PATROCINADORES!</h1>
             <div className='gold'>
               <div className='patrocinio'>
+                <img className='gold-img' src={Cemeai}/>
+                <p className='gold-text'>CEMEAI</p>
               </div>
               <div className='patrocinio'>
               </div>
