@@ -10,11 +10,14 @@ import BannerImage from "../../../assets/img/background-hackathon.png";
 import MapImage from "../../../assets/img/mapa.png";
 import lineTimeImage from "../../../assets/img/linha_tempo.png"
 import Google from "../../../assets/img/patrocinadores/Google.png";
-import PG from "../../../assets/img/patrocinadores/PG.png";
+import Amdocs from "../../../assets/img/patrocinadores/amdocs.png";
 import Arquivei from "../../../assets/img/patrocinadores/arquivei.png";
 import FundacaoEstudar from "../../../assets/img/patrocinadores/FunEstudar.png";
 import Cemeai from "../../../assets/img/patrocinadores/cemeai.png";
 import AdaTech from "../../../assets/img/patrocinadores/ada.png";
+import Venturus from "../../../assets/img/patrocinadores/venturus.png";
+import Yampi from "../../../assets/img/patrocinadores/yampi.png";
+import Voitto from "../../../assets/img/patrocinadores/voitto.png";
 
 import {Container, HeaderContainer} from "./style"
 
@@ -104,10 +107,24 @@ const HomeHackathon: React.FC = () => {
                 <p className='gold-text'>CEMEAI</p>
               </div>
               <div className='patrocinio'>
+                <img className='gold-img' src={Google}/>
+                <p className='gold-text'>GOOGLE</p>
+              </div>
+              <div className='patrocinio'>
               </div>
             </div>
             <div className='silver'>
               <div className='patrocinio'>
+                <img className='silver-img' src={Venturus}/>
+                <p className='silver-text'>VENTURUS</p>
+              </div>
+              <div className='patrocinio'>
+                <img className='silver-img' src={Yampi}/>
+                <p className='silver-text'>YAMPI</p>
+              </div>
+              <div className='patrocinio'>
+                <img className='silver-img' src={Voitto}/>
+                <p className='silver-text'>VOITTO</p>
               </div>
             </div>
             <div className='bronze'>
@@ -116,6 +133,16 @@ const HomeHackathon: React.FC = () => {
                 <p className='bronze-text'>FUNDAÇÃO ESTUDAR</p>
               </div>
               <div className='patrocinio'>
+                <img className='bronze-img' src={Arquivei}/>
+                <p className='bronze-text'>ARQUIVEI</p>
+              </div>
+              <div className='patrocinio'>
+                <img className='bronze-img' src={Amdocs}/>
+                <p className='bronze-text'>AMDOCS</p>
+              </div>
+              <div className='patrocinio'>
+                <img className='bronze-img' src={AdaTech}/>
+                <p className='bronze-text'>ADA TECH</p>
               </div>
             </div>
         </div>
