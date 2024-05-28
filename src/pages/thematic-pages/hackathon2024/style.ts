@@ -56,6 +56,14 @@ export const Container = styled.div`
         font-weight: 800px;
     }
 
+    #btn-inscricoes {
+        background-color: grey;
+    }
+
+    #btn-inscricoes:hover {
+        transform: none;
+    }
+
     .btn:hover {
         background-color: var(--cor-roxo-escuro);
         transform: scale(1.05);
@@ -129,6 +137,35 @@ export const Container = styled.div`
 
     #title-programacao {
         margin: 0 10vw;
+    }
+
+    .confira-hackathon {
+        margin: 0 10vw;
+        margin-bottom: 10vh;
+    }
+
+    .title-hackathon {
+        margin-left: 0;
+    }
+
+    .fotos-and-video {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .fotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .image-hack {
+        height: 320px;
+        width: 400px;
+        margin: 2px;
     }
 
     .faq {

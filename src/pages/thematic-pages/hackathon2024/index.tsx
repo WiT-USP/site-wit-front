@@ -5,6 +5,7 @@ import HeaderCellPhone from "../../../components/user-components/cell-phone-wind
 import FooterBranco from "../../../components/user-components/computer-window/footer-branco";
 import ToggleButton from 'components/thematic-components/quest&answer';
 import ButtonProps from 'components/user-components/props/button-props';
+import VideoEntrevista from 'components/thematic-components/video';
 
 import BannerImage from "../../../assets/img/background-hackathon.png";
 import MapImage from "../../../assets/img/mapa.png";
@@ -18,6 +19,13 @@ import AdaTech from "../../../assets/img/patrocinadores/ada.png";
 import Venturus from "../../../assets/img/patrocinadores/venturus.png";
 import Yampi from "../../../assets/img/patrocinadores/yampi.png";
 import Voitto from "../../../assets/img/patrocinadores/voitto.png";
+
+import Hackathon1 from "../../../assets/img/hackathon1.png"
+import Hackathon2 from "../../../assets/img/hackathon2.png"
+import Hackathon3 from "../../../assets/img/hackthon3.png"
+import Hackathon4 from "../../../assets/img/hackathon4.png"
+import Hackathon5 from "../../../assets/img/hackathon5.png"
+import Hackathon6 from "../../../assets/img/hackathon6.png"
 
 import {Container, HeaderContainer} from "./style"
 
@@ -96,7 +104,7 @@ const HomeHackathon: React.FC = () => {
           <div className='btn-area'>
               <a className='btn' href="../../../../docs/Regulamento.pdf" target="_blank"><h3 className='btn-text'>CONFIRA O EDITAL</h3></a>
               <a className='btn' href="../../../../docs/texto_apoio.pdf" target="_blank"><h3 className='btn-text'>LEIA O MATERIAL DE APOIO</h3></a>
-              <a className='btn' href="https://docs.google.com/forms/d/e/1FAIpQLSfEN-yBEsChNa8km2LpueVqPdEvJOYmZLEqHlOgKjnT148a-g/viewform"><h3 className='btn-text'>INSCREVA-SE JÁ</h3></a>
+              <a className='btn' id='btn-inscricoes'><h3 className='btn-text'>INSCRIÇÕES ENCERRADAS</h3></a>
           </div>
         </div>
         <div className='patrocinadores'>
@@ -145,6 +153,20 @@ const HomeHackathon: React.FC = () => {
                 <p className='bronze-text'>ADA TECH</p>
               </div>
             </div>
+        </div>
+        <div className='confira-hackathon'>
+          <h1 className='title' id='title-hackathon'>CONFIRA O QUE ROLOU NO NOSSO EVENTO</h1>
+          <div className='fotos-and-video'>
+            <VideoEntrevista/>
+            <div className='fotos'>
+              <img src={Hackathon1} className="image-hack" alt="Integrante do Women In Tech posando para a foto fazendo sinal de V com as maõs, ela está de sobretudo cinza e sentada em uma cadeira de escrivaninha durante o evento"/>
+              <img src={Hackathon2} className="image-hack" alt="Duas integrantes do Women In Tech sorrindo para a camera enquanto estão sentadas nas cadeiras de escravinha durante o evento"/>
+              <img src={Hackathon3} className="image-hack" alt="Integrante do Women In Tech explicando algo para as participantes. Todos estão de pé. As participantes estão fazendo um semi-circulo ao redor da integrante para ouvir melhor a explicação"/>
+              <img src={Hackathon4} className="image-hack" alt="Todas as participantes e membros da organização estão posando para a foto. Algumas meninas estão em pé e outras ajoelhadas ou sentadas. Atrás das meninas há um parede escrito Gente normal não muda o mundo"/>
+              <img src={Hackathon5} className="image-hack" alt="Mentora da hackathon dando dicas para uma equipe. A equipe consiste em 3 mulheres, todas com notebook aberto em cima da mesa. "/>
+              <img src={Hackathon6} className="image-hack" alt="Vencedoras da hackathon juntas com as juradas. Atrás delas tem a projeção de um slide com o símbolo da nossa hackathon, uma mulher com cabelo afro, ósculos escuros e brincos argolas, na cor roxa e branco."/>
+            </div>
+          </div>
         </div>
         <div className='programacao-hackathon'>
             <h1 className='title' id='title-programacao'>PROGRAMAÇÃO</h1>
