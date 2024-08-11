@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Container } from "./style";
 
@@ -10,6 +11,18 @@ const HamburgerMenu: React.FC = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const navigate = useNavigate();
+
+    const handleScroll = () => {
+        navigate('/');
+        setTimeout(() => {
+            const targetSection = document.getElementById('targetSection');
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 0); // Timeout para garantir que a navegação ocorreu antes da rolagem
+    };
 
   return (
     <Container>
@@ -31,6 +44,9 @@ const HamburgerMenu: React.FC = () => {
                     <a href="/hackathon">
                         <li>Hackathon</li>
                     </a>
+                    <button id="selective-header-btn" onClick={handleScroll}>
+                        <li>Processo Seletivo</li>
+                    </button>
                 </ul>
             )}
         </div>

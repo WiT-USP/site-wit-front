@@ -30,7 +30,10 @@ export const Container = styled.div`
 export const HeaderContainer = styled.header`
   background: var(--degrade-roxo-rosa);
   color: var(--cor-branco);
-  height: 15vh;
+
+  button {
+    color: var(--cor-branco);
+  }
 `;
 
 export const FooterContainer = styled.footer`

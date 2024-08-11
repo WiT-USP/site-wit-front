@@ -123,4 +123,8 @@ export const HeaderContainer = styled.header`
   left: 0;
   width: 100%;
   z-index: 1;
+
+  button {
+    color: var(--cor-roxo-escuro);
+  }
 `;

@@ -23,13 +23,20 @@ export const Container = styled.header`
 
     }
     
-    a:hover{
+    a:hover, #selective-header-btn:hover {
         color: var(--cor-roxo-claro);
     }
 
     .btn-menu {
         width: 50px;
         height: 50px;
+    }
+
+    #selective-header-btn {
+        color: var(--cor-roxo-escuro);
+        background: none;
+        text-align: left;
+
     }
 
     .lista-menu {

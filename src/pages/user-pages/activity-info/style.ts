@@ -15,6 +15,10 @@ export const HeaderContainer = styled.header`
     background: var(--cor-branco);
     color: var(--cor-roxo-escuro);
     width: 100%;
+
+    button {
+        color: var(--cor-roxo-escuro);
+    }
 `;
 
 export const FooterContainer = styled.footer`

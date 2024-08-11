@@ -5,8 +5,8 @@ export const Container = styled.header`
 
     .header-elements {
         display: flex;
-        height: 100px;
         width: 100%;
+        height: 100px;
         justify-content: space-between;
         align-items: center;
         padding: 0 10vw;
@@ -23,8 +23,15 @@ export const Container = styled.header`
 
     }
     
-    a:hover{
+    a:hover, #selective-header-btn:hover{
         color: var(--cor-roxo-claro);
+    }
+
+    #selective-header-btn {
+        color: var(--cor-roxo-escuro);
+        background: none;
+        text-align: left;
+
     }
 
     .btn-menu {
@@ -50,5 +57,7 @@ export const Container = styled.header`
     .drop-down {
         width: 25px;
         background: var(--cor-roxo-claro);
+        position: absolute;
+        z-index: 3;
     }
 `;

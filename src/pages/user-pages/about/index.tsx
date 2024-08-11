@@ -29,7 +29,7 @@ const About: React.FC = () => {
   return (
     <div id="main-about">
       <GlobalStyles />
-      {windowWidth > 700 ? (
+      {windowWidth > 900 ? (
         <HeaderContainer>
           <Header />
         </HeaderContainer>

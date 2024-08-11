@@ -6,6 +6,13 @@ export const Container = styled.header`
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    padding: 0 5vw;
+
+    .menu {
+        display: flex;
+        justify-content: right;
+        flex-wrap: wrap;
+    }
 
     h1 {
         font-family: var(--font-logo);
@@ -18,8 +25,13 @@ export const Container = styled.header`
 
     }
     
-    a:hover{
+    a:hover, #selective-header-btn:hover{
         color: var(--cor-roxo-claro);
+    }
+
+    #selective-header-btn {
+        font-weight: 500;
+        background: none;
     }
 
     li {

@@ -74,7 +74,7 @@ const HomeHackathon: React.FC = () => {
     return (
       <Container>
         <GlobalStyles/>
-        {windowWidth > 700 ? (
+        {windowWidth > 900 ? (
           <HeaderContainer>
             <Header/>
           </HeaderContainer>
