@@ -38,6 +38,11 @@ export const Container = styled.div`
         text-align: center;
     }
 
+    .selective-btn: hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease
+    }
+
     @media screen and (max-width: 600px) {
         .selective-title {
             font-size: 2.3em;
@@ -45,9 +50,6 @@ export const Container = styled.div`
 
         .selective-text {
             font-size: 1.4em;
-        }
-
-        .selective-btn {
         }
     }
 

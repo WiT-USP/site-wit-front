@@ -39,7 +39,7 @@ const Home: React.FC = () => {
           <div className='selective-process' id='targetSection'>
               <h1 className='selective-title'>Faça já parte do melhor grupo de extensão da USP</h1>
               <p className='selective-text'><b>A partir de segunda-feira, 12/08,</b> o Women in Tech abrirá seu processo seletivo para novas integrantes! Se você é uma <b>mulher</b> na graduação ou pós e tem interesse em tecnologia, essa é a sua chance de fazer parte de um grupo acolhedor e inspirador. Nosso objetivo é promover eventos e participar de iniciativas voltadas para TI, proporcionando um ambiente onde você se sinta valorizada e apoiada. <b>Não perca essa oportunidade</b> de crescer e se conectar com outras mulheres incríveis na área de tecnologia!</p>
-              <div className='selective-btn-area'><a className='selective-btn'>CLIQUE AQUI PARA SE INSCREVER!</a></div>
+              <div className='selective-btn-area'><a className='selective-btn' href='https://docs.google.com/forms/d/e/1FAIpQLScHW78Lpuep6kxWdmQINgRaiJNtA8Vc7yLQve8RFxKeAYrfSg/viewform'>CLIQUE AQUI PARA SE INSCREVER!</a></div>
           </div>
           <FooterContainer>
               <Footer/>
