@@ -7,7 +7,8 @@ const getAdminEvents = async (search?: string) => {
 
   try {
     const response = await axios.get(
-      baseURL + `/admin/events?searchParam=${search}`
+      baseURL + `/admin/events?searchParam=${search}`,
+      { withCredentials: true }
     );
     return response.data;
   } catch (error) {

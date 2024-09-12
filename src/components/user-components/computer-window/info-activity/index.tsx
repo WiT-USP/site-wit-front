@@ -81,8 +81,13 @@ const InfoActivity: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
             </p>
           </div>
           <div className="line-between"></div>
-          <div className="column" id="second-column">
-            <h1>INSCRIÇÕES ABERTAS ATÉ {formatDate(event.registrationAt)}</h1>
+          {event.activityName.toLowerCase().includes('lightning') ? (
+            <div className="class-btn">
+              <a href="/link-para-formulario" className="modal-btn">
+                ACESSE O FORMULÁRIO
+              </a>
+            </div>
+          ) : (
             <form className="event-form" onSubmit={handleSubmission}>
               <div id="itens" className="modal">
                 <div className="sub-item">
@@ -112,7 +117,7 @@ const InfoActivity: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
                 </button>
               </div>
             </form>
-          </div>
+          )}
         </div>
       ))}
     </Container>
