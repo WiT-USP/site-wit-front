@@ -121,7 +121,7 @@ export const Container = styled.div`
     }
 
     #first-column {
-      padding-top: 12vh;
+      padding-top: 2vh;
       border-bottom: 2px dotted var(--cor-rosa);
     }
 
@@ -133,6 +133,10 @@ export const Container = styled.div`
 
     h1 {
       margin: 0 1em 0.5em 1em;
+    }
+
+    #title-inscricoes {
+      padding-top: 2vh;
     }
 
     .modal-text {

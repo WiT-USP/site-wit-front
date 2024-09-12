@@ -67,7 +67,7 @@ const InfoEvent: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
                 <a href={event.link_fotos}>Clique aqui</a>
               </p>
             )}
-            <h1>INSCRIÇÕES ABERTAS ATÉ {formatDate(event.finalDate)}</h1>
+            <h1 id="title-inscricoes">INSCRIÇÕES ABERTAS ATÉ {formatDate(event.finalDate)}</h1>
           </div>
           {!isMobile && <div className="line-between"></div>}
           <div className="column" id="second-column">
