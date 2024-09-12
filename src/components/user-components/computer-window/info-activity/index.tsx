@@ -52,6 +52,17 @@ const InfoActivity: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
     return `${hours}:${minutes}`;
   };
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 720);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 720);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <Container>
       {infos.map((event) => (
@@ -80,7 +91,7 @@ const InfoActivity: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
               {formatTime(event.startTime)} às {formatTime(event.endTime)}
             </p>
           </div>
-          <div className="line-between"></div>
+          {!isMobile && <div className="line-between"></div>}
           {event.activityName.toLowerCase().includes('lightning') ? (
             <div className="class-btn">
               <p id="p-descricao"><span>Sobre as Lightning Talks: </span>Sobre as Lightning Talks: são palestras curtas, com objetivo de transmitir conhecimentos e estimular discussões sobre o tema visto. Cada palestrante tem cinco minutos de apresentação e com temática relacionada a ciências, exatas e tecnologia - fica a critério da pessoa fazer uma apresentação em slides, mas não é obrigatório. Vamos dar preferência para inscritas mulheres! Horários das Lightning Talks a definir.</p>

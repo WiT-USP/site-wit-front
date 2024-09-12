@@ -155,6 +155,9 @@ export const Container = styled.div`
     #first-column {
       padding-top: 4vh;
       border-bottom: 2px dotted var(--cor-rosa);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .column-img {
@@ -176,7 +179,11 @@ export const Container = styled.div`
     }
 
     .modal-input {
-      width: 100%;
+      width: 80vw;
+    }
+
+    .class-btn {
+      width: 70vw;
     }
 
     .modal-text {
