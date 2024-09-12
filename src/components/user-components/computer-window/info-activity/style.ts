@@ -105,7 +105,8 @@ export const Container = styled.div`
   }
 
   #p-descricao {
-    width: 45vw;
+    width: 52vw;
+    padding: 0 2vw;
   }
 
   .modal-btn {
