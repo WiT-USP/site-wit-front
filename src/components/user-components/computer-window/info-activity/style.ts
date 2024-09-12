@@ -104,7 +104,7 @@ export const Container = styled.div`
     flex-direction: column;
   }
 
-  .p-descricao {
+  #p-descricao {
     width: 45vw;
   }
 
