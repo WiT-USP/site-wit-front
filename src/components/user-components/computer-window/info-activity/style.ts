@@ -44,6 +44,12 @@ export const Container = styled.div`
     margin-top: 1em;
   }
 
+  .event-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+  }
+
   .line-between {
     width: 2px;
     height: 75vh; /* Altura igual à altura das colunas */
