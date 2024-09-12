@@ -83,7 +83,7 @@ const InfoActivity: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
           <div className="line-between"></div>
           {event.activityName.toLowerCase().includes('lightning') ? (
             <div className="class-btn">
-              <a href="/link-para-formulario" className="modal-btn">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNV_sDIVVe0pnpE3sjyamrYAoUv4kldbH3X9NB8YS95PDdvA/viewform?usp=sharing" className="modal-btn">
                 ACESSE O FORMULÁRIO
               </a>
             </div>
