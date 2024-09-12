@@ -47,7 +47,9 @@ export const Container = styled.div`
   .event-form {
     display: flex;
     justify-content: center;
-    padding-top: 1em;
+    padding-top: 2em;
+    flex-direction: column;
+
   }
 
   .line-between {
@@ -100,6 +102,11 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+  }
+
+  .p-descricao {
+    width: 60vw;
   }
 
   .modal-btn {

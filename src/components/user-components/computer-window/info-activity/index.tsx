@@ -83,7 +83,7 @@ const InfoActivity: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
           <div className="line-between"></div>
           {event.activityName.toLowerCase().includes('lightning') ? (
             <div className="class-btn">
-              <p><span>Sobre as Lightning Talks: </span>Sobre as Lightning Talks: são palestras curtas, com objetivo de transmitir conhecimentos e estimular discussões sobre o tema visto. Cada palestrante tem cinco minutos de apresentação e com temática relacionada a ciências, exatas e tecnologia - fica a critério da pessoa fazer uma apresentação em slides, mas não é obrigatório. Vamos dar preferência para inscritas mulheres! Horários das Lightning Talks a definir.</p>
+              <p id="p-descricao"><span>Sobre as Lightning Talks: </span>Sobre as Lightning Talks: são palestras curtas, com objetivo de transmitir conhecimentos e estimular discussões sobre o tema visto. Cada palestrante tem cinco minutos de apresentação e com temática relacionada a ciências, exatas e tecnologia - fica a critério da pessoa fazer uma apresentação em slides, mas não é obrigatório. Vamos dar preferência para inscritas mulheres! Horários das Lightning Talks a definir.</p>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNV_sDIVVe0pnpE3sjyamrYAoUv4kldbH3X9NB8YS95PDdvA/viewform?usp=sharing" className="modal-btn">
                 ACESSE O FORMULÁRIO
               </a>
