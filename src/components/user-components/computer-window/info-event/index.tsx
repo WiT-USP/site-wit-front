@@ -32,11 +32,6 @@ const InfoEvent: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
       {infos.map((event) => (
         <div className="main-div">
           <div className="column" id="first-column">
-            {!isMobile && <img
-              className="img-event"
-              src={bannerInfo}
-              alt="Banner do evento X"
-            />}
             <p id="first-p">
               <span>EVENTO: </span>
               {event.eventName}
