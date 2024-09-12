@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Container } from "./style";
 
@@ -16,16 +16,27 @@ const InfoEvent: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
     const minutes = date.getMinutes().toString().padStart(2, "0");
     return `${hours}:${minutes}`;
   };
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 720);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 720);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <Container>
       {infos.map((event) => (
         <div className="main-div">
           <div className="column" id="first-column">
-            <img
+            {!isMobile && <img
               className="img-event"
               src={bannerInfo}
               alt="Banner do evento X"
-            />
+            />}
             <p id="first-p">
               <span>EVENTO: </span>
               {event.eventName}
@@ -58,7 +69,7 @@ const InfoEvent: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
             )}
             <h1>INSCRIÇÕES ABERTAS ATÉ {formatDate(event.finalDate)}</h1>
           </div>
-          <div className="line-between"></div>
+          {!isMobile && <div className="line-between"></div>}
           <div className="column" id="second-column">
             <h1>ATIVIDADES DISPONÍVEIS PARA ESSE EVENTO</h1>
             <ul className="activities-ul">

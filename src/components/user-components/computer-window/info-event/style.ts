@@ -138,5 +138,13 @@ export const Container = styled.div`
     .modal-text {
       font-size: 1.2em;
     }
+
+    .line-between {
+      display: none;
+    }
+
+    .img-event {
+      display: none;
+    }
   }
 `;
