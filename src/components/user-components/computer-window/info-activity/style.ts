@@ -139,7 +139,7 @@ export const Container = styled.div`
     margin: 0.5em;
   }
 
-  @media screen and (max-width: 750px) {
+  @media (max-width: 750px) {
     .main-div {
       display: flex;
       justify-content: center;
@@ -161,11 +161,7 @@ export const Container = styled.div`
     }
 
     .column-img {
-      width: 100%;
-      height: 15vh;
-      overflow: hidden;
-      border-radius: 40px 40px 0 0;
-      margin-top: -10vh;
+      display: none;
     }
 
     p {
@@ -174,16 +170,20 @@ export const Container = styled.div`
       margin-bottom: 0.5em;
     }
 
+    #p-descricao {
+      width: 70vw;
+    }
+
     h1 {
       margin: 0 1em 0.5em 1em;
     }
 
     .modal-input {
-      width: 80vw;
+      width: 70vw;
     }
 
     .class-btn {
-      width: 70vw;
+      padding: 5vh 5vw;
     }
 
     .modal-text {
