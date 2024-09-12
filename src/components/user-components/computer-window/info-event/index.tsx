@@ -55,6 +55,7 @@ const InfoEvent: React.FC<{ infos: InfoProps[] }> = ({ infos }) => {
                 {event.coffeeValue}
               </p>
             )}
+            <p>(Caso o comprador traga seu próprio copo ou caneca NÃO DESCARTÁVEL, R$4,00 serão reembolsados no dia do evento!)</p>
             {event.link_coffee && (
               <p>
                 <span>LINK COFFEE: </span>
